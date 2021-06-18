@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/BotonPerfil"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:src="@drawable/perfil"
+            android:scaleType="centerCrop"
+            android:onClick="EntrarPerfil"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ArtBalance"
+            android:textSize="30dp"
+            android:translationX="20dp"
+            android:translationY="30dp"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cerrar Sesión"
+            android:textSize="10dp"
+            android:translationX="40dp"
+            android:translationY="-5dp"
+            app:backgroundTint="#9A9999"
+            android:onClick="CerrarSesion"
+            />
+
+        <Button
+            android:id="@+id/VentanaSubirArchivos"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:text="Subir Archivo"
+            android:textSize="10dp"
+            android:translationX="-76dp"
+            android:translationY="50dp"
+            app:backgroundTint="#9A9999"
+            android:onClick="SubirArchivo"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Buscar en ArtBalance"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ButFiltro1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuarios"
+            android:textSize="10dp"
+            android:translationX="3dp"
+            app:backgroundTint="#9A9999"
+            android:onClick="Filtros"
+            />
+
+        <Button
+            android:id="@+id/ButFiltro2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Región"
+            android:textSize="10dp"
+            android:translationX="7dp"
+            app:backgroundTint="#9A9999"
+            android:onClick="Filtros"
+            />
+
+        <Button
+            android:id="@+id/ButFiltro3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tendencias"
+            android:textSize="10dp"
+            android:translationX="11dp"
+            app:backgroundTint="#9A9999"
+            android:onClick="Filtros"
+            />
+
+        <Button
+            android:id="@+id/ButFiltro4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipos de Artes"
+            android:textSize="10dp"
+            android:translationX="15dp"
+            app:backgroundTint="#9A9999"
+            android:onClick="Filtros"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="205dp"
+            android:layout_height="177.3dp"
+            android:scaleType="fitCenter"
+            android:onClick="EntrarPublicación1"
+            android:id="@+id/publi1"
+            />
+
+        <ImageView
+            android:layout_width="205dp"
+            android:layout_height="177.3dp"
+            android:scaleType="fitCenter"
+            android:onClick="EntrarPublicación2"
+            android:id="@+id/publi2"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="205dp"
+            android:layout_height="177.3dp"
+            android:scaleType="fitCenter"
+            android:onClick="EntrarPublicación3"
+            android:id="@+id/publi3"
+            />
+        <ImageView
+            android:layout_width="205dp"
+            android:layout_height="177.3dp"
+            android:scaleType="fitCenter"
+            android:onClick="EntrarPublicación4"
+            android:id="@+id/publi4"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="205dp"
+            android:layout_height="177.3dp"
+            android:scaleType="fitCenter"
+            android:onClick="EntrarPublicación5"
+            android:id="@+id/publi5"
+            />
+
+        <ImageView
+            android:layout_width="205dp"
+            android:layout_height="177.3dp"
+            android:scaleType="fitCenter"
+            android:onClick="EntrarPublicación6"
+            android:id="@+id/publi6"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

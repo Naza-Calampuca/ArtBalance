@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1016697446035",
+    "firebase_url": "https://artbalance-4b209-default-rtdb.firebaseio.com",
+    "project_id": "artbalance-4b209",
+    "storage_bucket": "artbalance-4b209.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016697446035:android:a68a565c66afffcf31b766",
+        "android_client_info": {
+          "package_name": "com.example.artbalance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016697446035-ulcgp177rem66c4ntthmh36so7rpcmdo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8aN_ArhmhhQ1qR4vm-B8x3DR_Uc6iVf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016697446035-ulcgp177rem66c4ntthmh36so7rpcmdo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
