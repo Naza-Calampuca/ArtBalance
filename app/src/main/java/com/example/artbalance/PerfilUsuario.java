@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class SubirArchivo extends AppCompatActivity {
+public class PerfilUsuario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subir_archivo);
+        setContentView(R.layout.activity_perfil_usuario);
     }
 }

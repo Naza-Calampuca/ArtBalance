@@ -38,19 +38,28 @@ public class MainActivity extends AppCompatActivity {
 
     Button VentanaSubirArchivos;
 
- private ImageView publi1;
+    ImageButton BotonPerfil;
+
+
+    private ImageView publi1;
 private DatabaseReference DaTabase;
 private StorageReference storageReference;
 private ProgressDialog mProgressDialog;
 private DatabaseReference Database;
 private FirebaseStorage FirebasezStorage;
 private FirebaseDatabase FirebaseDatabase;
-//Buenas
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         VentanaSubirArchivos=(Button)findViewById(R.id.VentanaSubirArchivos);
+
+        //direccion de botones
+
 
         VentanaSubirArchivos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +70,18 @@ private FirebaseDatabase FirebaseDatabase;
 
             }
         });
+
+        BotonPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent( MainActivity.this, PerfilUsuario.class);
+                startActivity(a);
+
+
+            }
+        });
+
+
 
         edtBuscar = findViewById(R.id.editTextBuscar);
      publi1=(ImageView)findViewById(R.id.publi1);
