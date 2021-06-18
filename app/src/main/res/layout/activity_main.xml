@@ -18,9 +18,7 @@
             android:layout_height="106dp"
             android:src="@drawable/perfil"
             android:scaleType="centerCrop"
-            android:onClick="EntrarPerfil"
-
-            />
+            android:onClick="EntrarPerfil"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,8 +37,7 @@
             android:translationX="40dp"
             android:translationY="-5dp"
             app:backgroundTint="#9A9999"
-            android:onClick="CerrarSesion"
-            />
+            android:onClick="CerrarSesion"/>
 
         <Button
             android:id="@+id/VentanaSubirArchivos"
@@ -51,9 +48,7 @@
             android:translationX="-76dp"
             android:translationY="50dp"
             app:backgroundTint="#9A9999"
-            android:onClick="SubirArchivo"
-
-            />
+            android:onClick="SubirArchivo"/>
 
     </LinearLayout>
 
@@ -84,8 +79,7 @@
             android:textSize="10dp"
             android:translationX="3dp"
             app:backgroundTint="#9A9999"
-            android:onClick="Filtros"
-            />
+            android:onClick="Filtros"/>
 
         <Button
             android:id="@+id/ButFiltro2"
@@ -95,8 +89,7 @@
             android:textSize="10dp"
             android:translationX="7dp"
             app:backgroundTint="#9A9999"
-            android:onClick="Filtros"
-            />
+            android:onClick="Filtros"/>
 
         <Button
             android:id="@+id/ButFiltro3"
@@ -106,8 +99,7 @@
             android:textSize="10dp"
             android:translationX="11dp"
             app:backgroundTint="#9A9999"
-            android:onClick="Filtros"
-            />
+            android:onClick="Filtros"/>
 
         <Button
             android:id="@+id/ButFiltro4"
@@ -117,8 +109,7 @@
             android:textSize="10dp"
             android:translationX="15dp"
             app:backgroundTint="#9A9999"
-            android:onClick="Filtros"
-            />
+            android:onClick="Filtros"/>
 
     </LinearLayout>
 
@@ -132,16 +123,14 @@
             android:layout_height="177.3dp"
             android:scaleType="fitCenter"
             android:onClick="EntrarPublicación1"
-            android:id="@+id/publi1"
-            />
+            android:id="@+id/publi1"/>
 
         <ImageView
             android:layout_width="205dp"
             android:layout_height="177.3dp"
             android:scaleType="fitCenter"
             android:onClick="EntrarPublicación2"
-            android:id="@+id/publi2"
-            />
+            android:id="@+id/publi2"/>
 
     </LinearLayout>
 
@@ -155,36 +144,35 @@
             android:layout_height="177.3dp"
             android:scaleType="fitCenter"
             android:onClick="EntrarPublicación3"
-            android:id="@+id/publi3"
-            />
+            android:id="@+id/publi3"/>
+
         <ImageView
             android:layout_width="205dp"
             android:layout_height="177.3dp"
             android:scaleType="fitCenter"
             android:onClick="EntrarPublicación4"
-            android:id="@+id/publi4"
-            />
+            android:id="@+id/publi4"/>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <ImageView
             android:layout_width="205dp"
             android:layout_height="177.3dp"
             android:scaleType="fitCenter"
             android:onClick="EntrarPublicación5"
-            android:id="@+id/publi5"
-            />
+            android:id="@+id/publi5"/>
 
         <ImageView
             android:layout_width="205dp"
             android:layout_height="177.3dp"
             android:scaleType="fitCenter"
             android:onClick="EntrarPublicación6"
-            android:id="@+id/publi6"
-            />
+            android:id="@+id/publi6"/>
 
 
     </LinearLayout>
