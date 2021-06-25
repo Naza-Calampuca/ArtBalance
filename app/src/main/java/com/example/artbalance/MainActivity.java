@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button VentanaSubirArchivos;
 
+    Button CerrarSesion;
+
     ImageButton BotonPerfil;
 
     private ImageView publi1;
@@ -53,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BotonPerfil=(ImageButton)findViewById(R.id.BotonPerfil);
 
+
+        BotonPerfil=(ImageButton)findViewById(R.id.BotonPerfil);
         VentanaSubirArchivos=(Button)findViewById(R.id.VentanaSubirArchivos);
+        CerrarSesion=(Button)findViewById(R.id.BotonCerrarSesion);
 
 
         //direccion de botones
@@ -81,6 +85,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        CerrarSesion.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent b = new Intent( MainActivity.this, CerrarSesion.class);
+                startActivity(b);
+
+            }
+        });
+
+
+
+
+
+
 
         edtBuscar = findViewById(R.id.editTextBuscar);
         publi1=(ImageView)findViewById(R.id.publi1);
