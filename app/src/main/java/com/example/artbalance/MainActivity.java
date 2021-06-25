@@ -40,75 +40,80 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton BotonPerfil;
 
-
     private ImageView publi1;
-private DatabaseReference DaTabase;
-private StorageReference storageReference;
-private ProgressDialog mProgressDialog;
-private DatabaseReference Database;
-private FirebaseStorage FirebasezStorage;
-private FirebaseDatabase FirebaseDatabase;
-
-
-
+    private DatabaseReference DaTabase;
+    private StorageReference storageReference;
+    private ProgressDialog mProgressDialog;
+    private DatabaseReference Database;
+    private FirebaseStorage FirebasezStorage;
+    private FirebaseDatabase FirebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         VentanaSubirArchivos=(Button)findViewById(R.id.VentanaSubirArchivos);
 
         //direccion de botones
 
-
         VentanaSubirArchivos.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent( MainActivity.this, SuirPublicacion.class);
                 startActivity(i);
-
 
             }
         });
 
         BotonPerfil.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
                 Intent a = new Intent( MainActivity.this, PerfilUsuario.class);
                 startActivity(a);
-
 
             }
         });
 
-
-
         edtBuscar = findViewById(R.id.editTextBuscar);
-     publi1=(ImageView)findViewById(R.id.publi1);
-storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
-try{
-    final File localFile=File.createTempFile("arte1","jpg");
-storageReference.getFile(localFile)
-        .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+        publi1=(ImageView)findViewById(R.id.publi1);
+        storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
+
+        try{
+
+            final File localFile=File.createTempFile("arte1","jpg");
+            storageReference.getFile(localFile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+
+                            Toast.makeText(MainActivity.this,"Error Occurred", Toast.LENGTH_SHORT).show();
+                            Bitmap bitmap= BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                            ((ImageView)findViewById(R.id.publi1)).setImageBitmap(bitmap);
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener(){
+
             @Override
-            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+            public void onFailure(@NonNull Exception e) {
 
-                Toast.makeText(MainActivity.this,"Error Occurred", Toast.LENGTH_SHORT).show();
-                Bitmap bitmap= BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                ((ImageView)findViewById(R.id.publi1)).setImageBitmap(bitmap);
             }
-        }).addOnFailureListener(new OnFailureListener(){
-    @Override
-    public void onFailure(@NonNull Exception e) {
+                    });
+        }
 
-    }
-});
+        catch (IOException e){
 
-}
-catch (IOException e){
-    e.printStackTrace();
-}
+            e.printStackTrace();
+
+        }
+
         storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte2.jpg");
+
         try{
             final File localFile=File.createTempFile("arte2","jpg");
             storageReference.getFile(localFile)
@@ -119,111 +124,146 @@ catch (IOException e){
                             Toast.makeText(MainActivity.this,"Error Occurred", Toast.LENGTH_SHORT).show();
                             Bitmap bitmap= BitmapFactory.decodeFile(localFile.getAbsolutePath());
                             ((ImageView)findViewById(R.id.publi2)).setImageBitmap(bitmap);
+
                         }
                     }).addOnFailureListener(new OnFailureListener(){
-                @Override
-                public void onFailure(@NonNull Exception e) {
 
-                }
-            });
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
 
+                        }
+                    });
         }
+
         catch (IOException e){
+
             e.printStackTrace();
+
         }
+
         storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte3.jpg");
+
         try{
+
             final File localFile=File.createTempFile("arte3","jpg");
             storageReference.getFile(localFile)
                     .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
 
                             Toast.makeText(MainActivity.this,"Error Occurred", Toast.LENGTH_SHORT).show();
                             Bitmap bitmap= BitmapFactory.decodeFile(localFile.getAbsolutePath());
                             ((ImageView)findViewById(R.id.publi3)).setImageBitmap(bitmap);
+
                         }
                     }).addOnFailureListener(new OnFailureListener(){
-                @Override
-                public void onFailure(@NonNull Exception e) {
 
-                }
-            });
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
 
+                        }
+                    });
         }
+
         catch (IOException e){
+
             e.printStackTrace();
+
         }
+
         storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte4.jpg");
+
         try{
+
             final File localFile=File.createTempFile("arte4","jpg");
             storageReference.getFile(localFile)
                     .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
 
                             Toast.makeText(MainActivity.this,"Error Occurred", Toast.LENGTH_SHORT).show();
                             Bitmap bitmap= BitmapFactory.decodeFile(localFile.getAbsolutePath());
                             ((ImageView)findViewById(R.id.publi4)).setImageBitmap(bitmap);
+
                         }
                     }).addOnFailureListener(new OnFailureListener(){
-                @Override
-                public void onFailure(@NonNull Exception e) {
 
-                }
-            });
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
 
+                        }
+                    });
         }
+
         catch (IOException e){
+
             e.printStackTrace();
+
         }
+
         storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte5.jpg");
+
         try{
+
             final File localFile=File.createTempFile("arte5","jpg");
             storageReference.getFile(localFile)
                     .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
 
                             Toast.makeText(MainActivity.this,"Error Occurred", Toast.LENGTH_SHORT).show();
                             Bitmap bitmap= BitmapFactory.decodeFile(localFile.getAbsolutePath());
                             ((ImageView)findViewById(R.id.publi5)).setImageBitmap(bitmap);
+
                         }
                     }).addOnFailureListener(new OnFailureListener(){
-                @Override
-                public void onFailure(@NonNull Exception e) {
 
-                }
-            });
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
 
+                        }
+                    });
         }
+
         catch (IOException e){
+
             e.printStackTrace();
+
         }
+
         storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte6.jpg");
+
         try{
+
             final File localFile=File.createTempFile("arte6","jpg");
             storageReference.getFile(localFile)
                     .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
 
                             Toast.makeText(MainActivity.this,"Error Occurred", Toast.LENGTH_SHORT).show();
                             Bitmap bitmap= BitmapFactory.decodeFile(localFile.getAbsolutePath());
                             ((ImageView)findViewById(R.id.publi6)).setImageBitmap(bitmap);
+
                         }
                     }).addOnFailureListener(new OnFailureListener(){
-                @Override
-                public void onFailure(@NonNull Exception e) {
 
-                }
-            });
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
 
+                        }
+                    });
         }
+
         catch (IOException e){
-            e.printStackTrace();
-        }
 
-     }
+            e.printStackTrace();
+
+        }
     }
+}
 
