@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilUsuario">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/BotonPerfil"
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:src="@drawable/perfil"
+        android:scaleType="centerCrop"
+        android:onClick="EntrarPerfil"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Nicolas Díaz"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toRightOf="@id/BotonPerfil"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+
+        android:id="@+id/BotonCerrarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="3dp"
+        android:onClick="CerrarSesion"
+        android:text="Cerrar Sesión"
+        android:textSize="10dp"
+        app:backgroundTint="#9A9999"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/VentanaSubirArchivos"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="3dp"
+        android:onClick="SubirArchivo"
+        android:text="Subir Archivo"
+        android:textSize="10dp"
+        app:backgroundTint="#9A9999"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BotonCerrarSesion"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

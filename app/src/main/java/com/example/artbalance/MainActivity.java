@@ -56,38 +56,49 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BotonPerfil=(ImageButton)findViewById(R.id.BotonPerfil);
+        BotonPerfil = (ImageButton) findViewById(R.id.BotonPerfil);
 
-        VentanaSubirArchivos=(Button)findViewById(R.id.VentanaSubirArchivos);
-
+        VentanaSubirArchivos = (Button) findViewById(R.id.VentanaSubirArchivos);
 
 
         db.collection("Publicaciones")
+
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
                         if (task.isSuccessful()) {
+
                             for (QueryDocumentSnapshot document : task.getResult()) {
+
                                 Log.d("TAG", document.getId() + " => " + document.getData());
+
                             }
-                        } else {
+                        }
+
+                        else {
+
                             Log.w("TAG", "Error getting documents.", task.getException());
+
                         }
                     }
                 });
-        //direccion de botones
+
+        //Direccion de botones
 
         VentanaSubirArchivos.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent( MainActivity.this, SuirPublicacion.class);
+                Intent i = new Intent(MainActivity.this, SuirPublicacion.class);
                 startActivity(i);
 
             }
@@ -98,12 +109,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent a = new Intent( MainActivity.this, PerfilUsuario.class);
+                Intent a = new Intent(MainActivity.this, PerfilUsuario.class);
                 startActivity(a);
 
             }
         });
-
+    }
+}
 
 /*Storage
         edtBuscar = findViewById(R.id.editTextBuscar);
@@ -293,5 +305,4 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-}
-
+ */
