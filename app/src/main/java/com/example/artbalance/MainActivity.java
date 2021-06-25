@@ -97,12 +97,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
         edtBuscar = findViewById(R.id.editTextBuscar);
         publi1=(ImageView)findViewById(R.id.publi1);
         storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
@@ -290,4 +284,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
