@@ -53,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        BotonPerfil=(ImageButton)findViewById(R.id.BotonPerfil);
+
         VentanaSubirArchivos=(Button)findViewById(R.id.VentanaSubirArchivos);
+
 
         //direccion de botones
 
