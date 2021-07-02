@@ -44,15 +44,17 @@ public class MainActivity extends AppCompatActivity {
 
     Button VentanaSubirArchivos;
 
+    Button CerrarSesion;
+
+
     ImageButton BotonPerfil;
 
     private ImageView publi1;
     private DatabaseReference DaTabase;
-
     private ProgressDialog mProgressDialog;
     private DatabaseReference Database;
-
     private FirebaseDatabase FirebaseDatabase;
+    private StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
 
         VentanaSubirArchivos = (Button) findViewById(R.id.VentanaSubirArchivos);
 
+        CerrarSesion = (Button) findViewById(R.id.BotonCerrarSesion);
+
+        storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
 
         db.collection("Publicaciones")
 
@@ -114,13 +119,19 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
-}
 
-/*Storage
-        edtBuscar = findViewById(R.id.editTextBuscar);
-        publi1=(ImageView)findViewById(R.id.publi1);
-        FirebasezStorage=FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
+        CerrarSesion.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent e = new Intent(MainActivity.this, CerrarSesion.class);
+                startActivity(e);
+
+            }
+        });
+
+
 
         try{
 
@@ -138,11 +149,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).addOnFailureListener(new OnFailureListener(){
 
-            @Override
-            public void onFailure(@NonNull Exception e) {
+                @Override
+                public void onFailure(@NonNull Exception e) {
 
-            }
-                    });
+                }
+            });
         }
 
         catch (IOException e){
@@ -167,11 +178,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).addOnFailureListener(new OnFailureListener(){
 
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
+                @Override
+                public void onFailure(@NonNull Exception e) {
 
-                        }
-                    });
+                }
+            });
         }
 
         catch (IOException e){
@@ -198,11 +209,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).addOnFailureListener(new OnFailureListener(){
 
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
+                @Override
+                public void onFailure(@NonNull Exception e) {
 
-                        }
-                    });
+                }
+            });
         }
 
         catch (IOException e){
@@ -229,11 +240,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).addOnFailureListener(new OnFailureListener(){
 
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
+                @Override
+                public void onFailure(@NonNull Exception e) {
 
-                        }
-                    });
+                }
+            });
         }
 
         catch (IOException e){
@@ -260,11 +271,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).addOnFailureListener(new OnFailureListener(){
 
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
+                @Override
+                public void onFailure(@NonNull Exception e) {
 
-                        }
-                    });
+                }
+            });
         }
 
         catch (IOException e){
@@ -291,11 +302,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).addOnFailureListener(new OnFailureListener(){
 
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
+                @Override
+                public void onFailure(@NonNull Exception e) {
 
-                        }
-                    });
+                }
+            });
         }
 
         catch (IOException e){
@@ -303,6 +314,5 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
 
         }
-
     }
- */
+}
