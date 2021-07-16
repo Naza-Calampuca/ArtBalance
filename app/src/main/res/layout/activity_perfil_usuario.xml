@@ -1,57 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageButton
-        android:id="@+id/BotonPerfil"
-        android:layout_width="106dp"
-        android:layout_height="106dp"
-        android:src="@drawable/perfil"
-        android:scaleType="centerCrop"
-        android:onClick="EntrarPerfil"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Nicolas Díaz"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintLeft_toRightOf="@id/BotonPerfil"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
 
-    <Button
+        <ImageButton
+            android:id="@+id/BotonPerfil"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:src="@drawable/perfil"
+            android:scaleType="centerCrop"
+            android:onClick="EntrarPerfil"/>
 
-        android:id="@+id/BotonCerrarSesion"
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ArtBalance"
+            android:textSize="30dp"
+            android:translationX="20dp"
+            android:translationY="30dp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="359dp"
+            android:layout_height="234dp"
+            android:translationX="30dp"
+            android:translationY="20dp"
+            app:backgroundTint="#FFFFFF"
+            app:strokeColor="#0E0D0D"
+            app:strokeWidth="2dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginRight="3dp"
-        android:onClick="CerrarSesion"
-        android:text="Cerrar Sesión"
-        android:textSize="10dp"
-        app:backgroundTint="#9A9999"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/VentanaSubirArchivos"
-        android:layout_width="116dp"
+        <Button
+
+            android:id="@+id/SeleccionarImagen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9A9999"
+            android:text="Seleccionar imagen"
+            android:translationX="8dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9A9999"
+            android:text="Subir Publicación"
+            android:translationX="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="3dp"
-        android:onClick="SubirArchivo"
-        android:text="Subir Archivo"
-        android:textSize="10dp"
-        app:backgroundTint="#9A9999"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/BotonCerrarSesion"/>
+        android:orientation="vertical"
+        android:translationY="7dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Título Publicación" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descrpción Publicación" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ancho Publicación" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Altura Publicación" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio Publicación" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:translationY="30dp">
+
+        <Button
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:text="Atras"
+            android:backgroundTint="#9A9999"/>
+
+    </LinearLayout>
+
+</LinearLayout>
