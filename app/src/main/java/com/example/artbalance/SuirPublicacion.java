@@ -17,6 +17,7 @@ public class SuirPublicacion extends AppCompatActivity {
 
     Button ElegirImagen;
 
+
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
 
@@ -30,6 +31,8 @@ public class SuirPublicacion extends AppCompatActivity {
         //VIEWS
 
         ElegirImagen = (Button) findViewById(R.id.SeleccionarImagen);
+
+
 
         //handle button click
         ElegirImagen.setOnClickListener(new View.OnClickListener() {
