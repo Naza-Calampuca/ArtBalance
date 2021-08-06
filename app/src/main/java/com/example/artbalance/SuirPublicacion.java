@@ -22,9 +22,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
+
+import java.util.HashMap;
 
 public class SuirPublicacion extends AppCompatActivity {
 
@@ -32,10 +38,10 @@ public class SuirPublicacion extends AppCompatActivity {
     String myUrl="";
     StorageTask uploadTask;
     StorageReference storageReference;
-    ImageView close, image_added;
-    TextView post;
+    ImageView image_added;
+    Button post;
     EditText description;
-    Button VentanaSubirArchivos;
+    Button Atras;
 
     /*
     Button ElegirImagen;
@@ -50,11 +56,15 @@ public class SuirPublicacion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suir_publicacion);
 
-        //boton atras
+        Atras = (Button) findViewById(R.id.Atras);
+        image_added = findViewById(R.id.fotoprueba);
+        post = findViewById(R.id.post);
+        description = findViewById(R.id.Descripcion);
+        ElegirImagen = (Button) findViewById(R.id.SeleccionarImagen);
 
-        VentanaSubirArchivos = (Button) findViewById(R.id.Atras);
+        storageReference = FirebaseStorage.getInstance().getReference("posts");
 
-        VentanaSubirArchivos.setOnClickListener(new View.OnClickListener() {
+        Atras.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -65,24 +75,7 @@ public class SuirPublicacion extends AppCompatActivity {
             }
         });
 
-        close= findViewById(R.id.close);
-        image_added= findViewById(R.id.image_added);
-        post= findViewById(R.id.post);
-        description= findViewById(R.id.description);
-
-
-        storageReference = FirebaseStorage.getInstance().getReference("posts");
-
-        close.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void  onClick(View view){
-
-            startActivity(new Intent(PostActivity.this, MainActivity.class));
-            finish();
-
-            }
-        });
+        //TODO LO DE ANTES ESTA BIEN
 
         post.setOnClickListener(new View.OnClickListener() {
 
@@ -96,105 +89,28 @@ public class SuirPublicacion extends AppCompatActivity {
 
         CropImage.activity()
 
-                .setAspectRatio(l,l)
+                .setAspectRatio(1, 1)
                 .start(PostActivity.this);
 
-        /*
-
-        //VIEWS
-
-        */
-
-        ElegirImagen = (Button) findViewById(R.id.SeleccionarImagen);
-
-        //handle button click
-
-        ElegirImagen.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                //check runtime permission
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-
-                    if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                            == PackageManager.PERMISSION_DENIED) {
-
-                        //permission not granted, request it.
-                        String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
-                        //show popup for runtime permission
-                        requestPermissions(permissions, PERMISSION_CODE);
-
-                    } else {
-
-                        //permission already granted
-                        pickImageFromGallery();
-
-                    }
-
-                } else {
-
-                    //system os is less than marshmellow
-                    pickImageFromGallery();
-                }
-
-
-            }
-
-
-        });
-    }
-
-    private void pickImageFromGallery() {
-
-//intent to pick image
-        Intent intent = new Intent (Intent.ACTION_PICK);
-        intent.setType("image/*");
-        startActivityForResult(intent, IMAGE_PICK_CODE);
 
     }
 
-
-    //handle result of runtime permission
+        //ctrl + o
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
+    protected void onActivityResult(int requestCode, int resultCode,@Nuliable Intent data){
 
-            case PERMISSION_CODE:
-            if(grantResults.length > 0 && grantResults[0] ==
+        super.onActivityResult(requestCode,resultCode,data);
 
-            PackageManager.PERMISSION_GRANTED){
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && requestCode == RESULT_OK){
 
-                //Permission was granted
-
-                pickImageFromGallery();
-            }
-            else {
-
-                //permission weas denied
-
-                Toast.makeText(this, "Permission denied...!", Toast.LENGTH_SHORT).show();
-            }
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            imageUri = result.getUri();
         }
+
     }
+
 }
-
-
-    //handle result of picked image
-
-    /*
-
-    @Override
-    protected void onActivityResult (int requestCode,int resultCode,Intent data) {
-
-        if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
-
-            //set image to image view
-
-            mImageView.setImageURI(data.getData());
-*/
 
     }
 
@@ -218,10 +134,62 @@ private void uploadImage(){
                 + "."+getFileExtension(imageUri));
 
 
-            uploadTask = filerefrence
-    }
+            uploadTask = filerefrence.putFile(imageUri);
+            uploadTask.continueWithTask(new Continuation() {
+                @Override
+                public Object then(@NonNull Task task) throws Exception {
+                    if (!task.isSuccessful()){
+
+                        throw task.getException();
+                    }
 
 
+                    return filerefrence.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()){
+
+                        Uri downloadUri = task.getResult();
+                        myUrl = downloadUri.toString();
+
+
+                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
+
+                        String postid = reference.push().getKey();
+
+                        HashMap<String, Object> hashMap = new HashMap<> ();
+                        hashMap.put("postid",postid);
+                        hashMap.put("postimage",myUrl);
+                        hashMap.put("publisher",FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                        reference.child(postid). setValue(hashMap);
+
+                        progressDialog.dismiss();
+
+                        startActivity(new Intent (PostActivity.this, MainActivity.class ));
+
+                        finish();
+        } else {
+
+Toast.makeText(PostActivity.this, "Failed!", Toast.LENGHT_SHORT).show();
+
+                     }
+                }
+            }).addOnFailureListener(new OnFailureListener()){
+
+                @Override
+            public void onFailure(@NonNull Exception e){
+
+                    Toast.makeTest(PostActivity.this, ""+e.getMessage() , Toast.LENGHT_SHORT).show();
+
+        }
+
+        });
+    } else{
+        Toast.makeText(this, "No Image Selected", Toast.LENGHT_SHORT).show();
+        }
 }
 
 
