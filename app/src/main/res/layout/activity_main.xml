@@ -1,186 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageButton
+        android:id="@+id/BotonPerfil"
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:onClick="EntrarPerfil"
+        android:scaleType="centerCrop"
+        android:src="@drawable/perfil"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="132dp"
+        android:text="ArtBalance"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BotonPerfil"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/BotonCerrarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="3dp"
+        android:onClick="CerrarSesion"
+        android:text="Cerrar Sesión"
+        android:textSize="10dp"
+        app:backgroundTint="#9A9999"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/VentanaSubirArchivos"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="10dp"
+        android:onClick="SubirArchivo"
+        android:text="Subir Archivo"
+        android:textSize="10dp"
+        app:backgroundTint="#9A9999"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@id/BotonCerrarSesion" />
+
+    <EditText
+        android:id="@+id/editTextBuscar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:hint="Buscar en ArtBalance"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"/>
 
-        <ImageButton
-            android:id="@+id/BotonPerfil"
-            android:layout_width="106dp"
-            android:layout_height="106dp"
-            android:onClick="EntrarPerfil"
-            android:scaleType="centerCrop"
-            android:src="@drawable/perfil"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/ButFiltro1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Filtros"
+        android:text="Usuarios"
+        android:textSize="10dp"
+        app:backgroundTint="#9A9999"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginRight="132dp"
-            android:text="ArtBalance"
-            android:textColor="@color/black"
-            android:textSize="30dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/BotonPerfil"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/ButFiltro2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:onClick="Filtros"
+        android:text="Región"
+        android:textSize="10dp"
+        app:backgroundTint="#9A9999"
+        app:layout_constraintStart_toEndOf="@+id/ButFiltro1"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
 
-        <Button
-            android:id="@+id/BotonCerrarSesion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="3dp"
-            android:onClick="CerrarSesion"
-            android:text="Cerrar Sesión"
-            android:textSize="10dp"
-            app:backgroundTint="#9A9999"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/ButFiltro3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:onClick="Filtros"
+        android:text="Tendencias"
+        android:textSize="10dp"
+        app:backgroundTint="#9A9999"
+        app:layout_constraintStart_toEndOf="@+id/ButFiltro2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
 
-        <Button
-            android:id="@+id/VentanaSubirArchivos"
-            android:layout_width="116dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="10dp"
-            android:onClick="SubirArchivo"
-            android:text="Subir Archivo"
-            android:textSize="10dp"
-            app:backgroundTint="#9A9999"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@id/BotonCerrarSesion" />
+    <Button
+        android:id="@+id/ButFiltro4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:onClick="Filtros"
+        android:text="Tipos de Artes"
+        android:textSize="10dp"
+        app:backgroundTint="#9A9999"
+        app:layout_constraintStart_toEndOf="@+id/ButFiltro3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Listaimg"
+        />
 
-        <EditText
-            android:id="@+id/editTextBuscar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:hint="Buscar en ArtBalance"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"/>
 
-        <Button
-            android:id="@+id/ButFiltro1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="Filtros"
-            android:text="Usuarios"
-            android:textSize="10dp"
-            app:backgroundTint="#9A9999"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
 
-        <Button
-            android:id="@+id/ButFiltro2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:layout_marginLeft="6dp"
-            android:onClick="Filtros"
-            android:text="Región"
-            android:textSize="10dp"
-            app:backgroundTint="#9A9999"
-            app:layout_constraintStart_toEndOf="@+id/ButFiltro1"
-            app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
-
-        <Button
-            android:id="@+id/ButFiltro3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:layout_marginLeft="6dp"
-            android:onClick="Filtros"
-            android:text="Tendencias"
-            android:textSize="10dp"
-            app:backgroundTint="#9A9999"
-            app:layout_constraintStart_toEndOf="@+id/ButFiltro2"
-            app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
-
-        <Button
-            android:id="@+id/ButFiltro4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:layout_marginLeft="6dp"
-            android:onClick="Filtros"
-            android:text="Tipos de Artes"
-            android:textSize="10dp"
-            app:backgroundTint="#9A9999"
-            app:layout_constraintStart_toEndOf="@+id/ButFiltro3"
-            app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
-
-        <ImageButton
-            android:id="@+id/publi1"
-            android:layout_width="205dp"
-            android:layout_height="177.3dp"
-            android:onClick="EntrarPublicación1"
-            android:scaleType="fitCenter"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ButFiltro1"/>
-
-        <ImageButton
-            android:id="@+id/publi2"
-            android:layout_width="205dp"
-            android:layout_height="177.3dp"
-            android:onClick="EntrarPublicación2"
-            android:scaleType="fitCenter"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/publi1"
-            app:layout_constraintTop_toBottomOf="@+id/ButFiltro4"/>
-
-        <ImageButton
-            android:layout_width="205dp"
-            android:layout_height="177.3dp"
-            android:scaleType="fitCenter"
-            android:onClick="EntrarPublicación3"
-            android:id="@+id/publi3"
-            app:layout_constraintTop_toBottomOf="@+id/publi1"
-            app:layout_constraintLeft_toLeftOf="parent"/>
-
-        <ImageButton
-            android:id="@+id/publi4"
-            android:layout_width="205dp"
-            android:layout_height="177.3dp"
-            android:onClick="EntrarPublicación4"
-            android:scaleType="fitCenter"
-            app:layout_constraintStart_toEndOf="@+id/publi3"
-            app:layout_constraintTop_toBottomOf="@+id/publi2"
-            app:layout_constraintRight_toRightOf="parent"/>
-
-        <ImageButton
-            android:layout_width="205dp"
-            android:layout_height="177.3dp"
-            android:scaleType="fitCenter"
-            android:onClick="EntrarPublicación5"
-            android:id="@+id/publi5"
-            app:layout_constraintTop_toBottomOf="@+id/publi3"
-            app:layout_constraintLeft_toLeftOf="parent"/>
-
-        <ImageButton
-            android:id="@+id/publi6"
-            android:layout_width="205dp"
-            android:layout_height="177.3dp"
-            android:onClick="EntrarPublicación6"
-            android:scaleType="fitCenter"
-            app:layout_constraintStart_toEndOf="@+id/publi5"
-            app:layout_constraintTop_toBottomOf="@id/publi4"
-            app:layout_constraintRight_toRightOf="parent"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

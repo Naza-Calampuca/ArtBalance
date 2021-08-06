@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         CerrarSesion = (Button) findViewById(R.id.BotonCerrarSesion);
 
         storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
-
+        ArrayList<Publicacion> publicaciones = new ArrayList<>();
         db.collection("Publicaciones")
 
                 .get()
@@ -82,10 +84,13 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             for (QueryDocumentSnapshot document : task.getResult()) {
-
+                                publicaciones.add(document.toObject(Publicacion.class));
                                 Log.d("TAG", document.getId() + " => " + document.getData());
 
                             }
+                            ListView lista=findViewById (R.id.Listaimg);
+                            PublicacionesAdapter ubis= new PublicacionesAdapter( MainActivity.this,publicaciones);
+                            lista.setAdapter (ubis);
                         }
 
                         else {
@@ -93,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.w("TAG", "Error getting documents.", task.getException());
 
                         }
+
                     }
                 });
 
@@ -132,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
+/*
         try{
 
             final File localFile=File.createTempFile("arte1","jpg");
@@ -314,5 +320,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
 
         }
+        */
+
     }
+
+
 }
