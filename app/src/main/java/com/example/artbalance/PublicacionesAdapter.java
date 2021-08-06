@@ -1,6 +1,7 @@
 package com.example.artbalance;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,9 +52,10 @@ class PublicacionesAdapter  extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.list_publicaciones, viewGroup, false);
         }
-
+        Publicacion p = publicacions.get(position);
         ImageView publicacionimagen= (ImageView) view.findViewById(R.id.publicacion);
-        Glide.with(context).load("http://goo.gl/gEgYUd").into(publicacionimagen);
+        Glide.with(context).load(p.getImagen()).into(publicacionimagen);
+      //Log.d("Imagen:", p.getImagen());
         return view;
     }
 }

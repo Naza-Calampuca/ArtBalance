@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 publicaciones.add(document.toObject(Publicacion.class));
+
                                 Log.d("TAG", document.getId() + " => " + document.getData());
 
                             }
