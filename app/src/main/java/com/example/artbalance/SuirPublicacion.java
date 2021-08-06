@@ -22,9 +22,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
+
+import java.util.HashMap;
 
 public class SuirPublicacion extends AppCompatActivity {
 
@@ -213,9 +219,36 @@ private void uploadImage(){
                 + "."+getFileExtension(imageUri));
 
 
-            uploadTask = filerefrence
-    }
+            uploadTask = filerefrence.putFile(imageUri);
+            uploadTask.continueWithTask(new Continuation() {
+                @Override
+                public Object then(@NonNull Task task) throws Exception {
+                    if (!task.isSuccessful()){
 
+                        throw task.getException();
+                    }
+
+
+                    return filerefrence.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()){
+
+                        Uri downloadUri = task.getResult();
+                        myUrl = downloadUri.toString();
+
+
+                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
+
+                        String postid = reference.push().getKey();
+
+                        HashMap<Stirng>
+                    }
+                }
+            })
+    }
 
 }
 
