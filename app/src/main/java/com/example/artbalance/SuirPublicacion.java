@@ -34,16 +34,13 @@ import java.util.HashMap;
 
 public class SuirPublicacion extends AppCompatActivity {
 
-
     Uri imageUri;
     String myUrl="";
-StorageTask uploadTask;
-StorageReference storageReference;
-
-
-ImageView close, image_added;
-TextView post;
-EditText description;
+    StorageTask uploadTask;
+    StorageReference storageReference;
+    ImageView close, image_added;
+    TextView post;
+    EditText description;
     Button VentanaSubirArchivos;
 
     /*
@@ -55,10 +52,12 @@ EditText description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suir_publicacion);
 
-//boton atras
+        //boton atras
+
         VentanaSubirArchivos = (Button) findViewById(R.id.Atras);
 
         VentanaSubirArchivos.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +70,6 @@ EditText description;
 
             }
         });
-
 
         close= findViewById(R.id.close);
         image_added= findViewById(R.id.image_added);
@@ -90,31 +88,38 @@ EditText description;
             finish();
 
             }
-
         });
-post.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
 
-        uploadImage();
+        post.setOnClickListener(new View.OnClickListener() {
 
-    }
-});
+            @Override
+            public void onClick(View view) {
 
-CropImage.activity()
-.setAspectRatio(l,l)
-.start(PostActivity.this);
+                uploadImage();
 
+            }
+        });
 
-/*
+        CropImage.activity()
+
+                .setAspectRatio(l,l)
+                .start(PostActivity.this);
+
+        /*
+
         //VIEWS
+
+        */
 
         ElegirImagen = (Button) findViewById(R.id.SeleccionarImagen);
 
         //handle button click
+
         ElegirImagen.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+
                 //check runtime permission
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

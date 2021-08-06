@@ -1,114 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_width="match_parent">
 
-    <ImageButton
-        android:id="@+id/BotonPerfil"
-        android:layout_width="106dp"
-        android:layout_height="106dp"
-        android:onClick="EntrarPerfil"
-        android:scaleType="centerCrop"
-        android:src="@drawable/perfil"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/TextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="132dp"
-        android:text="ArtBalance"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BotonPerfil"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ImageView
-        android:id="@+id/ImageView"
-        android:layout_width="359dp"
-        android:layout_height="234dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextView2"
-        app:strokeColor="#000000"
-        app:strokeWidth="2dp"/>
-
-    <Button
-        android:id="@+id/SeleccionarImagen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:backgroundTint="#9A9999"
-        android:text="Seleccionar Imagen"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImageView"/>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:backgroundTint="#9A9999"
-        android:text="Subir Publicación"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImageView"/>
-
-    <EditText
-        android:id="@+id/Nombre"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre de la Publicación"
-        app:layout_constraintTop_toBottomOf="@+id/SeleccionarImagen"/>
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/Descripcion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Descripción de la Publicación"
-        app:layout_constraintTop_toBottomOf="@+id/Nombre"/>
+        <ImageButton
+            android:id="@+id/BotonPerfil"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:onClick="EntrarPerfil"
+            android:scaleType="centerCrop"
+            android:src="@drawable/perfil"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-    <EditText
-        android:id="@+id/Ancho"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ancho de la Publicación"
-        app:layout_constraintTop_toBottomOf="@+id/Descripcion"/>
+        <TextView
+            android:id="@+id/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="132dp"
+            android:text="ArtBalance"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/BotonPerfil"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-    <EditText
-        android:id="@+id/Altura"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Altura de la Publicación"
-        app:layout_constraintTop_toBottomOf="@+id/Ancho"/>
+        <ImageView
+            android:id="@+id/ImageView"
+            android:layout_width="359dp"
+            android:layout_height="234dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextView2"
+            app:strokeColor="#000000"
+            app:strokeWidth="2dp"/>
 
-    <EditText
-        android:id="@+id/Precio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Precio de la Publicación"
-        app:layout_constraintTop_toBottomOf="@id/Altura"/>
+        <Button
+            android:id="@+id/SeleccionarImagen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:backgroundTint="#9A9999"
+            android:text="Seleccionar Imagen"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ImageView"/>
 
-    <Button
-        android:id="@+id/Atras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#9A9999"
-        android:text="Atras"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Precio" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:backgroundTint="#9A9999"
+            android:text="Subir Publicación"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ImageView"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/Nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre de la Publicación"
+            app:layout_constraintTop_toBottomOf="@+id/SeleccionarImagen"/>
+
+        <EditText
+            android:id="@+id/Descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción de la Publicación"
+            app:layout_constraintTop_toBottomOf="@+id/Nombre"/>
+
+        <EditText
+            android:id="@+id/Ancho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ancho de la Publicación"
+            app:layout_constraintTop_toBottomOf="@+id/Descripcion"/>
+
+        <EditText
+            android:id="@+id/Altura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Altura de la Publicación"
+            app:layout_constraintTop_toBottomOf="@+id/Ancho"/>
+
+        <EditText
+            android:id="@+id/Precio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio de la Publicación"
+            app:layout_constraintTop_toBottomOf="@id/Altura"/>
+
+        <Button
+            android:id="@+id/Atras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#9A9999"
+            android:text="Atras"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Precio" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
