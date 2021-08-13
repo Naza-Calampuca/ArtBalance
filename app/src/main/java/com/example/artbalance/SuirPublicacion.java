@@ -24,11 +24,14 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
+import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.util.HashMap;
 
@@ -42,13 +45,7 @@ public class SuirPublicacion extends AppCompatActivity {
     Button post;
     EditText description;
     Button Atras;
-
-    /*
     Button ElegirImagen;
-
-    private static final int IMAGE_PICK_CODE = 1000;
-    private static final int PERMISSION_CODE = 1001;
-*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,27 +87,8 @@ public class SuirPublicacion extends AppCompatActivity {
         CropImage.activity()
 
                 .setAspectRatio(1, 1)
-                .start(PostActivity.this);
+                .start(SuirPublicacion.this);
 
-
-    }
-
-        //ctrl + o
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode,@Nuliable Intent data){
-
-        super.onActivityResult(requestCode,resultCode,data);
-
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && requestCode == RESULT_OK){
-
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            imageUri = result.getUri();
-        }
-
-    }
-
-}
 
     }
 
@@ -122,19 +100,21 @@ public class SuirPublicacion extends AppCompatActivity {
         return mime.getExtensionFromMimeType(contentResolver.getType(uri));
     }
 
-private void uploadImage(){
 
-    ProgressDialog progressDialog = new ProgressDialog(this);
-    progressDialog.setMessage("Posting");
-    progressDialog.show();
+    private void uploadImage(){
 
-    if (imageUri != null){
+        ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Posting");
+        progressDialog.show();
 
-        StorageReference filerefrence = storageReference.child(System.currentTimeMillis()
-                + "."+getFileExtension(imageUri));
+        if (imageUri != null){
+    //IMPORTANTE
+            StorageReference filerefrence = storageReference.child(System.currentTimeMillis()
+                    + "."+getFileExtension(imageUri));
 
 
             uploadTask = filerefrence.putFile(imageUri);
+
             uploadTask.continueWithTask(new Continuation() {
                 @Override
                 public Object then(@NonNull Task task) throws Exception {
@@ -147,67 +127,102 @@ private void uploadImage(){
                     return filerefrence.getDownloadUrl();
                 }
             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                         @Override
+                                         public void onComplete(@NonNull Task<Uri> task) {
+                                             if (task.isSuccessful()) {
+/*
+                                                 Uri downloadUri = task.getResult();
+                                                 myUrl = downloadUri.toString();
+
+                                                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
+
+                                                 String postid = reference.push().getKey();
+
+                                                 HashMap<String, Object> hashMap = new HashMap<>();
+                                                 hashMap.put("postid", postid);
+                                                 hashMap.put("postimage", myUrl);
+                                                 hashMap.put("description", description.getText().toString());
+                                                 hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                                 reference.child(postid).setValue(hashMap);
+*/
+
+
+
+                                                 progressDialog.dismiss();
+
+                                                 startActivity(new Intent(SuirPublicacion.this, MainActivity.class));
+
+                                                 finish();
+
+                                             } else {
+
+                                                 Toast.makeText(SuirPublicacion.this, "Failed!", Toast.LENGTH_SHORT).show();
+
+                                             }
+                                         }
+            }).addOnFailureListener(new OnFailureListener(){
+
                 @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    if (task.isSuccessful()){
+                public void onFailure(@NonNull Exception e){
 
-                        Uri downloadUri = task.getResult();
-                        myUrl = downloadUri.toString();
+                    Toast.makeText(SuirPublicacion.this, ""+e.getMessage() , Toast.LENGTH_SHORT).show();
 
-
-                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
-
-                        String postid = reference.push().getKey();
-
-                        HashMap<String, Object> hashMap = new HashMap<> ();
-                        hashMap.put("postid",postid);
-                        hashMap.put("postimage",myUrl);
-                        hashMap.put("publisher",FirebaseAuth.getInstance().getCurrentUser().getUid());
-
-                        reference.child(postid). setValue(hashMap);
-
-                        progressDialog.dismiss();
-
-                        startActivity(new Intent (PostActivity.this, MainActivity.class ));
-
-                        finish();
-        } else {
-
-Toast.makeText(PostActivity.this, "Failed!", Toast.LENGHT_SHORT).show();
-
-                     }
                 }
-            }).addOnFailureListener(new OnFailureListener()){
 
-                @Override
-            public void onFailure(@NonNull Exception e){
-
-                    Toast.makeTest(PostActivity.this, ""+e.getMessage() , Toast.LENGHT_SHORT).show();
-
+            });
+        } else{
+            Toast.makeText(this, "No Image Selected", Toast.LENGTH_SHORT).show();
         }
 
-        });
-    } else{
-        Toast.makeText(this, "No Image Selected", Toast.LENGHT_SHORT).show();
-        }
-}
+    }
 
+
+//ctrl + o
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    protected void onActivityResult(int requestCode, int resultCode,@Nullable Intent data){
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE ❝❝ resultCode ==RESULT_OK){
-        CropImage.ActivityResult result = CropImage.getActivityResult(data);
-        imageUri = result.getUri();
+        super.onActivityResult(requestCode,resultCode,data);
+
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && requestCode == RESULT_OK){
+
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            imageUri = result.getUri();
 
         image_added.setImageURI(imageUri);
-        } else{
-                Toast.makeText(this,"Something gone wrong!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(PostActivity.this , MainActivity.class ));
-                finish();
+        } else {
+            Toast.makeText(this, "Something gone wrong", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(SuirPublicacion.this , MainActivity.class ));
+            finish();
+
+
         }
+
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
