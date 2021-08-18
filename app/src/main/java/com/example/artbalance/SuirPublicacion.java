@@ -1,220 +1,128 @@
-package com.example.artbalance;
+package com.example.firebasestorage;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.Manifest;
 import android.app.ProgressDialog;
-import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.MimeTypeMap;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.example.artbalance.Publicacion;
+import com.example.artbalance.databinding.ActivityMainBinding;
+import com.example.artbalance.databinding.ActivitySuirPublicacionBinding;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.StorageTask;
-import com.theartofdev.edmodo.cropper.CropImage;
+import com.google.firebase.storage.UploadTask;
 
-import java.util.HashMap;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class SuirPublicacion extends AppCompatActivity {
 
+    ActivitySuirPublicacionBinding binding;
     Uri imageUri;
-    String myUrl="";
-    StorageTask uploadTask;
     StorageReference storageReference;
-    ImageView image_added;
-    Button post;
-    EditText description;
-    Button Atras;
-    Button ElegirImagen;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_suir_publicacion);
+binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        Atras = (Button) findViewById(R.id.Atras);
-        image_added = findViewById(R.id.fotoprueba);
-        post = findViewById(R.id.post);
-        description = findViewById(R.id.Descripcion);
-        ElegirImagen = (Button) findViewById(R.id.SeleccionarImagen);
 
-        storageReference = FirebaseStorage.getInstance().getReference("posts");
-
-        Atras.setOnClickListener(new View.OnClickListener() {
-
+        binding.selectImagebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent z = new Intent(SuirPublicacion.this, MainActivity.class);
-                startActivity(z);
+
+                selectImage();
+
 
             }
         });
 
-        //TODO LO DE ANTES ESTA BIEN
-
-        post.setOnClickListener(new View.OnClickListener() {
-
+        binding.uploadimagebtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+
 
                 uploadImage();
 
             }
         });
 
-        CropImage.activity()
-
-                .setAspectRatio(1, 1)
-                .start(SuirPublicacion.this);
-
-
     }
 
+    private void uploadImage() {
 
-    private String getFileExtension (Uri uri){
-
-        ContentResolver contentResolver = getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(contentResolver.getType(uri));
-    }
-
-
-    private void uploadImage(){
-
-        ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Posting");
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Uploading File....");
         progressDialog.show();
 
-        if (imageUri != null){
-    //IMPORTANTE
-            StorageReference filerefrence = storageReference.child(System.currentTimeMillis()
-                    + "."+getFileExtension(imageUri));
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
+        Date now = new Date();
+        String fileName = formatter.format(now);
+        storageReference = FirebaseStorage.getInstance().getReference("images/"+fileName);
 
 
-            uploadTask = filerefrence.putFile(imageUri);
+        storageReference.putFile(imageUri)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-            uploadTask.continueWithTask(new Continuation() {
-                @Override
-                public Object then(@NonNull Task task) throws Exception {
-                    if (!task.isSuccessful()){
+                        binding.firebaseimage.setImageURI(null);
+                        Toast.makeText(SuirPublicacion.this,"Successfully Uploaded",Toast.LENGTH_SHORT).show();
+                        if (progressDialog.isShowing())
+                            progressDialog.dismiss();
 
-                        throw task.getException();
                     }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
 
 
-                    return filerefrence.getDownloadUrl();
-                }
-            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                                         @Override
-                                         public void onComplete(@NonNull Task<Uri> task) {
-                                             if (task.isSuccessful()) {
-/*
-                                                 Uri downloadUri = task.getResult();
-                                                 myUrl = downloadUri.toString();
-
-                                                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
-
-                                                 String postid = reference.push().getKey();
-
-                                                 HashMap<String, Object> hashMap = new HashMap<>();
-                                                 hashMap.put("postid", postid);
-                                                 hashMap.put("postimage", myUrl);
-                                                 hashMap.put("description", description.getText().toString());
-                                                 hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
-                                                 reference.child(postid).setValue(hashMap);
-*/
+                if (progressDialog.isShowing())
+                    progressDialog.dismiss();
+                Toast.makeText(SuirPublicacion.this,"Failed to Upload",Toast.LENGTH_SHORT).show();
 
 
-
-                                                 progressDialog.dismiss();
-
-                                                 startActivity(new Intent(SuirPublicacion.this, MainActivity.class));
-
-                                                 finish();
-
-                                             } else {
-
-                                                 Toast.makeText(SuirPublicacion.this, "Failed!", Toast.LENGTH_SHORT).show();
-
-                                             }
-                                         }
-            }).addOnFailureListener(new OnFailureListener(){
-
-                @Override
-                public void onFailure(@NonNull Exception e){
-
-                    Toast.makeText(SuirPublicacion.this, ""+e.getMessage() , Toast.LENGTH_SHORT).show();
-
-                }
-
-            });
-        } else{
-            Toast.makeText(this, "No Image Selected", Toast.LENGTH_SHORT).show();
-        }
+            }
+        });
 
     }
 
+    private void selectImage() {
 
-//ctrl + o
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent,100);
+
+    }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode,@Nullable Intent data){
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-        super.onActivityResult(requestCode,resultCode,data);
+        if (requestCode == 100 && data != null && data.getData() != null){
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && requestCode == RESULT_OK){
-
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            imageUri = result.getUri();
-
-        image_added.setImageURI(imageUri);
-        } else {
-            Toast.makeText(this, "Something gone wrong", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(SuirPublicacion.this , MainActivity.class ));
-            finish();
+            imageUri = data.getData();
+            binding.firebaseimage.setImageURI(imageUri);
 
 
         }
-
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -52,7 +52,7 @@
             app:strokeWidth="2dp"/>
 
         <Button
-            android:id="@+id/SeleccionarImagen"
+            android:id="@+id/selectImagebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
@@ -62,7 +62,7 @@
             app:layout_constraintTop_toBottomOf="@+id/fotoprueba"/>
 
         <Button
-            android:id="@+id/post"
+            android:id="@+id/uploadimagebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre de la Publicación"
-            app:layout_constraintTop_toBottomOf="@+id/SeleccionarImagen"/>
+            app:layout_constraintTop_toBottomOf="@+id/selectImagebtn"/>
 
         <EditText
             android:id="@+id/Descripcion"

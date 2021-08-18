@@ -54,7 +54,7 @@
 
         <Button
 
-            android:id="@+id/SeleccionarImagen"
+            android:id="@+id/selectImagebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#9A9999"
