@@ -1,4 +1,4 @@
-package com.example.firebasestorage;
+package com.example.artbalance;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -79,7 +79,7 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                        binding.firebaseimage.setImageURI(null);
+                        binding.fotoprueba.setImageURI(null);
                         Toast.makeText(SuirPublicacion.this,"Successfully Uploaded",Toast.LENGTH_SHORT).show();
                         if (progressDialog.isShowing())
                             progressDialog.dismiss();
@@ -116,7 +116,7 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         if (requestCode == 100 && data != null && data.getData() != null){
 
             imageUri = data.getData();
-            binding.firebaseimage.setImageURI(imageUri);
+            binding.fotoprueba.setImageURI(imageUri);
 
 
         }
