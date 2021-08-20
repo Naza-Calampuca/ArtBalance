@@ -72,7 +72,7 @@
             app:layout_constraintTop_toBottomOf="@+id/fotoprueba"/>
 
         <EditText
-            android:id="@+id/Nombre"
+            android:id="@+id/NombreImg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre de la Publicación"
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Descripción de la Publicación"
-            app:layout_constraintTop_toBottomOf="@+id/Nombre"/>
+            app:layout_constraintTop_toBottomOf="@+id/NombreImg"/>
 
         <EditText
             android:id="@+id/Ancho"

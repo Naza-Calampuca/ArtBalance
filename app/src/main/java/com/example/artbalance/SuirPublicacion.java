@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.artbalance.Publicacion;
@@ -34,6 +35,8 @@ public class SuirPublicacion extends AppCompatActivity {
     StorageReference storageReference;
     ProgressDialog progressDialog;
     Button Atras;
+    EditText NombreImg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,8 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
 
             }
         });
+
+
 
 
         binding.selectImagebtn.setOnClickListener(new View.OnClickListener() {
