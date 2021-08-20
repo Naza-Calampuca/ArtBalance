@@ -26,7 +26,9 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class SuirPublicacion extends AppCompatActivity {
 
@@ -45,6 +47,7 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         Atras = (Button) findViewById(R.id.Atras);
+        NombreImg = (EditText) findViewById(R.id.NombreImg);
 
         Atras.setOnClickListener(new View.OnClickListener() {
 
@@ -58,7 +61,27 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         });
 
 
+// Create a new user with a first and last name
+        Map<String, Object> user = new HashMap<>();
+        user.put("nombre", NombreImg.getText());
+        user.put("last", "Lovelace");
+        user.put("born", 1815);
 
+// Add a new document with a generated ID
+        db.collection("users")
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
 
         binding.selectImagebtn.setOnClickListener(new View.OnClickListener() {
             @Override
