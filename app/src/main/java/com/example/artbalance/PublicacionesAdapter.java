@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
+/*
  * Created by leandro on 6/6/17.
  */
 

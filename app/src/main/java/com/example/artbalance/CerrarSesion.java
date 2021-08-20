@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -30,12 +33,30 @@ public class CerrarSesion extends AppCompatActivity {
     private FirebaseStorage FirebasezStorage;
     private com.google.firebase.database.FirebaseDatabase FirebaseDatabase;
 
+
+    Button IniciarSesion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cerrar_sesion);
 
         storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
+
+
+        IniciarSesion = (Button) findViewById(R.id.IniciarSesion);
+
+        IniciarSesion.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(CerrarSesion.this, MainActivity.class);
+                startActivity(i);
+
+            }
+        });
+
 
         try{
 

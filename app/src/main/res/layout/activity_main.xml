@@ -118,12 +118,10 @@
         app:backgroundTint="#9A9999"
         app:layout_constraintStart_toEndOf="@+id/ButFiltro3"
         app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/Listaimg"
-        />
-
-
+        android:id="@+id/Listaimg"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

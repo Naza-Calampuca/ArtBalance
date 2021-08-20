@@ -1,3 +1,5 @@
+
+
 package com.example.artbalance;
 
 import androidx.annotation.NonNull;
@@ -9,6 +11,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.artbalance.Publicacion;
@@ -30,12 +33,26 @@ public class SuirPublicacion extends AppCompatActivity {
     Uri imageUri;
     StorageReference storageReference;
     ProgressDialog progressDialog;
+    Button Atras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Atras = (Button) findViewById(R.id.Atras);
+
+        Atras.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(SuirPublicacion.this, MainActivity.class);
+                startActivity(i);
+
+            }
+        });
 
 
         binding.selectImagebtn.setOnClickListener(new View.OnClickListener() {

@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
     Button CerrarSesion;
 
-
     ImageButton BotonPerfil;
 
     private ImageView publi1;
@@ -138,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+// STORAGE
 /*
         try{
 
