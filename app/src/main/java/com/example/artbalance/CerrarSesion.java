@@ -51,7 +51,7 @@ public class CerrarSesion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(CerrarSesion.this, MainActivity.class);
+                Intent i = new Intent(CerrarSesion.this, Login.class);
                 startActivity(i);
 
             }

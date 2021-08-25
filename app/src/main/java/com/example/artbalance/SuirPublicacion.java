@@ -61,6 +61,8 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         });
 
 
+        /*
+
 // Create a new user with a first and last name
         Map<String, Object> user = new HashMap<>();
         user.put("nombre", NombreImg.getText());
@@ -82,6 +84,7 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
                         Log.w(TAG, "Error adding document", e);
                     }
                 });
+*/
 
         binding.selectImagebtn.setOnClickListener(new View.OnClickListener() {
             @Override
