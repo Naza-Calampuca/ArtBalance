@@ -15,12 +15,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /*
- * Created by leandro on 6/6/17.
+ * Created by leandro and ArtBalance 27/8/21.
  */
 
 class PublicacionesAdapter  extends BaseAdapter {
 
     ArrayList<Publicacion> publicacions;
+
     Context context;
 
     PublicacionesAdapter(Context context, ArrayList<Publicacion> publicacions) {
@@ -53,9 +54,16 @@ class PublicacionesAdapter  extends BaseAdapter {
             view = inflater.inflate(R.layout.list_publicaciones, viewGroup, false);
         }
         Publicacion p = publicacions.get(position);
+
         ImageView publicacionimagen= (ImageView) view.findViewById(R.id.publicacion);
+        TextView Precio= (TextView) view.findViewById(R.id.Precio);
+        TextView Descripcion= (TextView) view.findViewById(R.id.Descripcion);
+
         Glide.with(context).load(p.getImagen()).into(publicacionimagen);
-      //Log.d("Imagen:", p.getImagen());
+        Precio.setText(String.valueOf(p.getPrecio()));
+        Descripcion.setText(p.getDescripcion());
+
+        //Log.d("Imagen:", p.getImagen());
         return view;
     }
 }
