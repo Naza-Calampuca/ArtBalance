@@ -35,6 +35,7 @@ public class CerrarSesion extends AppCompatActivity {
 
 
     Button IniciarSesion;
+    Button Registrarse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class CerrarSesion extends AppCompatActivity {
 
         storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
 
+        Registrarse = (Button) findViewById(R.id.btn_registrarse);
 
         IniciarSesion = (Button) findViewById(R.id.IniciarSesion);
 

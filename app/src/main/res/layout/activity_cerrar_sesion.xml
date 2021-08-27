@@ -55,7 +55,7 @@
             app:strokeWidth="2dp"/>
 
         <Button
-            android:id="@+id/VentanaSubirArchivos"
+            android:id="@+id/btn_registrarse"
             android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
