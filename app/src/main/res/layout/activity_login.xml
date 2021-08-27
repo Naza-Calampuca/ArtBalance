@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".Login">
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,30 +19,27 @@
 
     </TextView>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/et_mail"
+        android:layout_marginBottom="10dp"
+        android:hint="Coloque mail"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        app:endIconMode="clear_text">
+        android:layout_height="wrap_content"
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Mail"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        >
 
-    <com.google.android.material.textfield.TextInputLayout
+    </EditText>
+
+    <EditText
         android:id="@+id/et_pass"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        app:endIconMode="password_toggle">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Coloque password"
+        android:translationY="10dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
+    </EditText>
+
 
     <Button
         android:id="@+id/btn_login"
@@ -53,6 +49,8 @@
         android:textColor="#fff"
         android:translationY="20dp"
         app:backgroundTint="#9A9999">
+
+
     </Button>
 
     <Button
@@ -65,6 +63,8 @@
         android:textColor="#fff"
         android:translationY="20dp"
         app:backgroundTint="#9A9999">
+
+
     </Button>
 
     <Button
@@ -77,6 +77,10 @@
         android:textColor="#fff"
         android:translationY="20dp"
         app:backgroundTint="#9A9999">
+
     </Button>
+
+
+
 
 </LinearLayout>

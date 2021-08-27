@@ -61,31 +61,6 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         });
 
 
-        /*
-
-// Create a new user with a first and last name
-        Map<String, Object> user = new HashMap<>();
-        user.put("nombre", NombreImg.getText());
-        user.put("last", "Lovelace");
-        user.put("born", 1815);
-
-// Add a new document with a generated ID
-        db.collection("users")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
-*/
-
         binding.selectImagebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,11 +78,24 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
 
 
                 uploadImage();
+                subirFirestoreDatabase();
+
 
             }
         });
 
     }
+
+    private void subirFirestoreDatabase() {
+
+
+
+
+
+
+    }
+//Fin del oncreate
+
 
     private void uploadImage() {
 

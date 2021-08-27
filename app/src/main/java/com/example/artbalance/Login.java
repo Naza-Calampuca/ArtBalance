@@ -34,7 +34,10 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         et_mail = findViewById(R.id.et_mail);
+        et_mail.setText("calampuca.naza.2004@gmail.com");
+
         et_pass = findViewById(R.id.et_pass);
+        et_pass.setText("Globorojo722");
 
         btn_login = findViewById(R.id.btn_login);
         btn_recuperar = findViewById(R.id.btn_recuperar);

@@ -59,6 +59,16 @@ public class CerrarSesion extends AppCompatActivity {
             }
         });
 
+        Registrarse.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent e = new Intent(CerrarSesion.this, Registrarse.class);
+                startActivity(e);
+
+            }
+        });
 
         try{
 
