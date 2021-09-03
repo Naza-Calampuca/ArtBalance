@@ -5,22 +5,27 @@
 
     <ImageButton
         android:id="@+id/publicacion"
-        android:layout_width="205dp"
-        android:layout_height="177.3dp"
+        android:layout_width="365dp"
+        android:layout_height="246dp"
         android:onClick="EntrarPublicación6"
         android:scaleType="fitCenter"
-
+        android:layout_gravity="center"
         />
 
     <TextView
         android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:id="@+id/Precio"
+        android:layout_gravity="center"
+
         />
+
     <TextView
+        android:id="@+id/Descripcion"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
-        android:id="@+id/Descripcion"
+        android:layout_gravity="center"
+
         />
 
 </LinearLayout>
