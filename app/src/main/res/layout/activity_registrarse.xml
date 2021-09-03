@@ -45,11 +45,13 @@
 
     <Button
         android:id="@+id/btn_registrar"
-        android:textColor="#fff"
-        android:text="Registrarse"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:padding="10dp"
         android:translationY="20dp"
-        app:backgroundTint="#9A9999"/>
+        app:backgroundTint="#2958FF" />
 
 </LinearLayout>
