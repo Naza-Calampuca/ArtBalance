@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +9,7 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".Login">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,31 +18,32 @@
         android:text="Iniciar sesion"
         android:textColor="#000"
         android:textSize="25sp"
-        android:translationY="-50dp">
+        android:translationY="-50dp"/>
 
-    </TextView>
-
-    <EditText
-        android:id="@+id/et_mail"
-        android:layout_marginBottom="10dp"
-        android:hint="Coloque mail"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:endIconMode="clear_text">
 
-        >
+        <EditText
+            android:id="@+id/et_mail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Ingresar Mail"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    </EditText>
-
-    <EditText
-        android:id="@+id/et_pass"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Coloque password"
-        android:translationY="10dp">
+        app:endIconMode="password_toggle">
 
-    </EditText>
-
+        <EditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Ingresar Contraseña"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_login"
@@ -48,10 +52,7 @@
         android:text="Iniciar Sesión"
         android:textColor="#fff"
         android:translationY="20dp"
-        app:backgroundTint="#9A9999">
-
-
-    </Button>
+        app:backgroundTint="#9A9999"/>
 
     <Button
         android:id="@+id/btn_recuperar"
@@ -62,10 +63,7 @@
         android:text="olvide mi contraseña"
         android:textColor="#fff"
         android:translationY="20dp"
-        app:backgroundTint="#9A9999">
-
-
-    </Button>
+        app:backgroundTint="#9A9999"/>
 
     <Button
         android:id="@+id/btn_registrar"
@@ -76,11 +74,6 @@
         android:text="No tengo cuenta"
         android:textColor="#fff"
         android:translationY="20dp"
-        app:backgroundTint="#9A9999">
-
-    </Button>
-
-
-
+        app:backgroundTint="#9A9999"/>
 
 </LinearLayout>

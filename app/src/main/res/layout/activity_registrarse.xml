@@ -9,46 +9,47 @@
     tools:context=".Registrarse">
 
     <TextView
-        android:textSize="25sp"
-        android:textColor="#000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Registrar cuenta"
+        android:textStyle="bold"
+        android:text="Crear Cuenta"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:translationY="-50dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:endIconMode="clear_text">
 
-    </TextView>
+        <EditText
+            android:id="@+id/et_mail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Ingresar Mail"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/et_mail"
-        android:layout_marginBottom="10dp"
-        android:hint="Coloque mail"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:endIconMode="password_toggle">
 
-    </EditText>
-
-    <EditText
-        android:id="@+id/et_pass"
-        android:layout_marginBottom="10dp"
-        android:hint="Coloque password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </EditText>
-
+        <EditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Ingresar Contraseña"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_registrar"
         android:textColor="#fff"
-        android:text="Registrar"
+        android:text="Registrarse"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-
-    </Button>
-
-
-
-
+        android:layout_height="wrap_content"
+        android:translationY="20dp"
+        app:backgroundTint="#9A9999"/>
 
 </LinearLayout>
