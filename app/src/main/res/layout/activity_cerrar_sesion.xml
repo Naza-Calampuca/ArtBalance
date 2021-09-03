@@ -33,7 +33,7 @@
             android:textSize="30dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toEndOf="@+id/BotonPerfil"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <Button
             android:id="@+id/IniciarSesion"
@@ -52,7 +52,6 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toTopOf="parent"
-            app:strokeColor="#9A9999"
             app:strokeWidth="2dp"/>
 
         <Button
@@ -70,7 +69,7 @@
             app:backgroundTint="#2958FF"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/IniciarSesion" />
+            app:layout_constraintTop_toBottomOf="@+id/IniciarSesion"/>
 
         <EditText
             android:id="@+id/editTextBuscar"
@@ -135,15 +134,11 @@
             android:id="@+id/Listaimg"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ButFiltro3" />
-
-
-
-
-
+            app:layout_constraintTop_toBottomOf="@+id/ButFiltro3"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

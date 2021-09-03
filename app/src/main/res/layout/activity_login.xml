@@ -56,7 +56,6 @@
         android:textStyle="bold"
         android:translationY="20dp"
         app:backgroundTint="#FFFFFF"
-        app:strokeColor="#9A9999"
         app:strokeWidth="2dp"/>
 
     <Button
