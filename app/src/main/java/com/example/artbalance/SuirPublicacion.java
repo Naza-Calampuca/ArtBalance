@@ -10,6 +10,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,8 @@ import com.example.artbalance.databinding.ActivityMainBinding;
 import com.example.artbalance.databinding.ActivitySuirPublicacionBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -38,6 +41,7 @@ public class SuirPublicacion extends AppCompatActivity {
     ProgressDialog progressDialog;
     Button Atras;
     EditText NombreImg;
+    EditText Precio;
 
 
     @Override
@@ -48,7 +52,7 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
 
         Atras = (Button) findViewById(R.id.Atras);
         NombreImg = (EditText) findViewById(R.id.NombreImg);
-
+        Precio = (EditText) findViewById(R.id.Precio);
         Atras.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -87,14 +91,33 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
     }
 
     private void subirFirestoreDatabase() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+// Create a new user with a first and last name
+        Map<String, Object> publicacion = new HashMap<>();
+        publicacion.put("Descripcion",   NombreImg.getText().toString());
+        publicacion.put("Imagen", imageUri.toString() );
+        publicacion.put("Precio", Integer.valueOf(Precio.getText().toString()));
 
-
-
+// Add a new document with a generated ID
+        db.collection("Publicaciones")
+                .add(publicacion)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d("naza", "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("artbalance", "Error adding document", e);
+                    }
+                });
 
 
     }
-//Fin del oncreate
+
 
 
     private void uploadImage() {
