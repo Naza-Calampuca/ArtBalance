@@ -6,17 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Registrarse">
+    tools:context=".Registrarse"
+    android:background="@drawable/gradient_background"
+    >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textStyle="bold"
         android:text="Crear Cuenta"
-        android:textColor="#000"
+        android:textColor="#FFFFFF"
         android:textSize="25sp"
-        android:translationY="-50dp"/>
+        android:textStyle="bold"
+        android:translationY="-50dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

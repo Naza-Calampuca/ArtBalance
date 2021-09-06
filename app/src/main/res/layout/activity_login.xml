@@ -8,7 +8,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Login">
+    tools:context=".Login"
+    android:background="@drawable/gradient_background"
+
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +19,7 @@
         android:gravity="center"
         android:textStyle="bold"
         android:text="Iniciar sesion"
-        android:textColor="#000"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:translationY="-50dp"/>
 
