@@ -80,9 +80,9 @@
         android:onClick="Filtros"
         android:text="Usuarios"
         android:textSize="10dp"
-        app:backgroundTint="#9A9999"
+        app:backgroundTint="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
 
     <Button
         android:id="@+id/ButFiltro2"
@@ -93,9 +93,9 @@
         android:onClick="Filtros"
         android:text="Región"
         android:textSize="10dp"
-        app:backgroundTint="#9A9999"
+        app:backgroundTint="#000000"
         app:layout_constraintStart_toEndOf="@+id/ButFiltro1"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
 
     <Button
         android:id="@+id/ButFiltro3"
@@ -106,9 +106,9 @@
         android:onClick="Filtros"
         android:text="Tendencias"
         android:textSize="10dp"
-        app:backgroundTint="#9A9999"
+        app:backgroundTint="#000000"
         app:layout_constraintStart_toEndOf="@+id/ButFiltro2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
 
     <Button
         android:id="@+id/ButFiltro4"
@@ -119,9 +119,9 @@
         android:onClick="Filtros"
         android:text="Tipos de Artes"
         android:textSize="10dp"
-        app:backgroundTint="#9A9999"
+        app:backgroundTint="#000000"
         app:layout_constraintStart_toEndOf="@+id/ButFiltro3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
 
     <ListView
         android:id="@+id/Listaimg"
