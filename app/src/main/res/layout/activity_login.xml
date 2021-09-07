@@ -69,9 +69,9 @@
         android:padding="10dp"
         android:text="Registrarse"
         android:textSize="10dp"
+        android:textStyle="bold"
         android:translationY="20dp"
-        app:backgroundTint="#2958FF"
-        android:textStyle="bold"/>
+        app:backgroundTint="#9F9F9F" />
 
     <Button
         android:id="@+id/btn_recuperar"
@@ -80,10 +80,10 @@
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:text="Olvide mi contraseña"
-        android:textSize="10dp"
         android:textColor="#fff"
+        android:textSize="10dp"
+        android:textStyle="bold"
         android:translationY="20dp"
-        app:backgroundTint="#9A9999"
-        android:textStyle="bold"/>
+        app:backgroundTint="#000000" />
 
 </LinearLayout>

@@ -43,10 +43,10 @@
         android:onClick="CerrarSesion"
         android:text="Cerrar Sesión"
         android:textSize="10dp"
-        app:backgroundTint="#9A9999"
+        app:backgroundTint="#000000"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/VentanaSubirArchivos"
@@ -57,8 +57,9 @@
         android:layout_marginTop="10dp"
         android:onClick="SubirArchivo"
         android:text="Subir Archivo"
+        android:textColor="#000000"
         android:textSize="10dp"
-        app:backgroundTint="#9A9999"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@id/BotonCerrarSesion" />
