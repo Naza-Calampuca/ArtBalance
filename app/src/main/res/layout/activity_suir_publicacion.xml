@@ -84,16 +84,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="Nombre de la Publicación"
-            app:layout_constraintTop_toBottomOf="@+id/selectImagebtn"/>
+            android:hint="Introducir Descripcion de la Publicacion"
+            android:textColorHint="#838383"
+            app:layout_constraintTop_toBottomOf="@+id/selectImagebtn" />
 
-        <EditText
-            android:id="@+id/Descripcion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:hint="Descripción de la Publicación"
-            app:layout_constraintTop_toBottomOf="@+id/NombreImg"/>
 
         <EditText
             android:id="@+id/Precio"
@@ -101,7 +95,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:hint="Precio de la Publicación"
-            app:layout_constraintTop_toBottomOf="@id/Descripcion"/>
+            android:textColorHint="#838383"
+            app:layout_constraintTop_toBottomOf="@id/NombreImg" />
 
         <Button
             android:id="@+id/Atras"

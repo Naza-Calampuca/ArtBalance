@@ -44,6 +44,7 @@ public class SuirPublicacion extends AppCompatActivity {
     EditText Precio;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +54,7 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         Atras = (Button) findViewById(R.id.Atras);
         NombreImg = (EditText) findViewById(R.id.NombreImg);
         Precio = (EditText) findViewById(R.id.Precio);
+
         Atras.setOnClickListener(new View.OnClickListener() {
 
             @Override
