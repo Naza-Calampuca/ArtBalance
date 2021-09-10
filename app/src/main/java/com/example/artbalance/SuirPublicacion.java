@@ -42,7 +42,7 @@ public class SuirPublicacion extends AppCompatActivity {
     Button Atras;
     EditText NombreImg;
     EditText Precio;
-
+    //IdUsuario;
 
 
     @Override
@@ -54,6 +54,7 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         Atras = (Button) findViewById(R.id.Atras);
         NombreImg = (EditText) findViewById(R.id.NombreImg);
         Precio = (EditText) findViewById(R.id.Precio);
+
 
         Atras.setOnClickListener(new View.OnClickListener() {
 
@@ -96,10 +97,12 @@ binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 // Create a new user with a first and last name
+
         Map<String, Object> publicacion = new HashMap<>();
         publicacion.put("Descripcion",   NombreImg.getText().toString());
         publicacion.put("Imagen", imageUri.toString() );
         publicacion.put("Precio", Integer.valueOf(Precio.getText().toString()));
+        //publicacion.put("Usuario",  UsuarioId.getText().toString());
 
 // Add a new document with a generated ID
         db.collection("Publicaciones")

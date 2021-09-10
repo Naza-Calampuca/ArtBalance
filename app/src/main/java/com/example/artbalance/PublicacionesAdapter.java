@@ -14,9 +14,6 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/*
- * Created by leandro and ArtBalance 27/8/21.
- */
 
 class PublicacionesAdapter  extends BaseAdapter {
 
@@ -58,6 +55,9 @@ class PublicacionesAdapter  extends BaseAdapter {
         ImageView publicacionimagen= (ImageView) view.findViewById(R.id.publicacion);
         TextView Precio= (TextView) view.findViewById(R.id.Precio);
         TextView Descripcion= (TextView) view.findViewById(R.id.Descripcion);
+       // TextView Usuario= (TextView) view.findViewById(R.id.);
+
+
 
         Glide.with(context).load(p.getImagen()).into(publicacionimagen);
         Precio.setText(String.valueOf(p.getPrecio()));

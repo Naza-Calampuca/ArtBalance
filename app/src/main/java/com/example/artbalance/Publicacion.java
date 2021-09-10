@@ -34,5 +34,6 @@ public class Publicacion {
         return Usuario;
     }
 
+    public void setUsuario(String usuario) { Usuario = usuario; }
 
 }
