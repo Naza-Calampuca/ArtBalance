@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/TextView2"
+            android:id="@+id/ArtBalance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -85,6 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:hint="Introducir Descripcion de la Publicacion"
+            android:textColor="#FFFFFF"
             android:textColorHint="#838383"
             app:layout_constraintTop_toBottomOf="@+id/selectImagebtn" />
 
@@ -94,6 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:hint="Precio de la Publicación"
+            android:textColor="#FFFFFF"
             android:textColorHint="#838383"
             app:layout_constraintTop_toBottomOf="@id/NombreImg" />
 
