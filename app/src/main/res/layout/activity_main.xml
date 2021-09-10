@@ -45,7 +45,7 @@
         android:textSize="10dp"
         app:backgroundTint="#000000"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/ArtBalance"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -61,7 +61,7 @@
         android:textSize="10dp"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/ArtBalance"
         app:layout_constraintTop_toBottomOf="@id/BotonCerrarSesion" />
 
     <EditText
@@ -71,7 +71,7 @@
         android:layout_marginTop="35dp"
         android:hint="Buscar en ArtBalance"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+        app:layout_constraintTop_toBottomOf="@+id/ArtBalance"/>
 
     <Button
         android:id="@+id/ButFiltro1"
