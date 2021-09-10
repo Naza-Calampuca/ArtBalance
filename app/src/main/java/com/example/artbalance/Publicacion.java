@@ -4,6 +4,7 @@ public class Publicacion {
     String Descripcion;
     String Imagen;
     int Precio;
+    String Usuario;
 
     public String getDescripcion() {
         return Descripcion;
@@ -28,4 +29,10 @@ public class Publicacion {
     public void setPrecio(int precio) {
         Precio = precio;
     }
+
+    public String getUsuario() {
+        return Usuario;
+    }
+
+
 }
