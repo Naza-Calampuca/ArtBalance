@@ -64,15 +64,6 @@
         app:layout_constraintStart_toEndOf="@+id/ArtBalance"
         app:layout_constraintTop_toBottomOf="@id/BotonCerrarSesion" />
 
-    <EditText
-        android:id="@+id/editTextBuscar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:hint="Buscar en ArtBalance"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/ArtBalance"/>
-
     <Button
         android:id="@+id/ButFiltro1"
         android:layout_width="wrap_content"
@@ -82,7 +73,16 @@
         android:textSize="10dp"
         app:backgroundTint="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
+        tools:layout_editor_absoluteY="152dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contacto"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="116dp" />
 
     <Button
         android:id="@+id/ButFiltro2"
@@ -95,7 +95,7 @@
         android:textSize="10dp"
         app:backgroundTint="#000000"
         app:layout_constraintStart_toEndOf="@+id/ButFiltro1"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
+        tools:layout_editor_absoluteY="152dp" />
 
     <Button
         android:id="@+id/ButFiltro3"
@@ -108,7 +108,7 @@
         android:textSize="10dp"
         app:backgroundTint="#000000"
         app:layout_constraintStart_toEndOf="@+id/ButFiltro2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
+        tools:layout_editor_absoluteY="152dp" />
 
     <Button
         android:id="@+id/ButFiltro4"
@@ -121,7 +121,7 @@
         android:textSize="10dp"
         app:backgroundTint="#000000"
         app:layout_constraintStart_toEndOf="@+id/ButFiltro3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
+        tools:layout_editor_absoluteY="152dp" />
 
     <ListView
         android:id="@+id/Listaimg"
