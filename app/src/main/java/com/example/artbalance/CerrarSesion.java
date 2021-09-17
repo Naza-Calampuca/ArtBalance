@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,17 +45,12 @@ public class CerrarSesion extends AppCompatActivity {
 
     Button IniciarSesion;
     Button Registrarse;
-    TextView ArtBalance;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cerrar_sesion);
-
-        ArtBalance = (TextView) findViewById(R.id.ArtBalance);
 
         Registrarse = (Button) findViewById(R.id.btn_registrarse);
 

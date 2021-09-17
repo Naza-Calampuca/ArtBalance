@@ -68,26 +68,26 @@ public class Login extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             if (awesomeValidation.validate()){
+                if (awesomeValidation.validate()){
 
-                 String mail = et_mail.getText().toString();
-                 String pass = et_pass.getText().toString();
+                    String mail = et_mail.getText().toString();
+                    String pass = et_pass.getText().toString();
 
-                 firebaseAuth.signInWithEmailAndPassword(mail,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                     @Override
-                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        //
-                         if(task.isSuccessful()){
-                            irahome();
-                         }else {
-                             String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
-                             dameToastdeerror(errorCode);
+                    firebaseAuth.signInWithEmailAndPassword(mail,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            //
+                            if(task.isSuccessful()){
+                                irahome();
+                            }else {
+                                String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
+                                dameToastdeerror(errorCode);
 
-                         }
-                         //
-                     }
-                 });
-             }
+                            }
+                            //
+                        }
+                    });
+                }
 
             }
         });
