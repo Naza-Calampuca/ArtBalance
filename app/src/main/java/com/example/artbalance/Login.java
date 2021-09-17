@@ -78,7 +78,9 @@ public class Login extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             //
                             if(task.isSuccessful()){
+                                task.getResult();
                                 irahome();
+
                             }else {
                                 String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
                                 dameToastdeerror(errorCode);

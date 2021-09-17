@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -45,6 +46,8 @@ public class CerrarSesion extends AppCompatActivity {
 
     Button IniciarSesion;
     Button Registrarse;
+    TextView ArtBalance;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +55,24 @@ public class CerrarSesion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cerrar_sesion);
 
+        ArtBalance = (TextView) findViewById(R.id.textView2);
+
         Registrarse = (Button) findViewById(R.id.btn_registrarse);
 
         IniciarSesion = (Button) findViewById(R.id.IniciarSesion);
+
+
+        ArtBalance.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent a = new Intent(CerrarSesion.this, CerrarSesion.class);
+                startActivity(a);
+
+            }
+        });
+
 
         IniciarSesion.setOnClickListener(new View.OnClickListener() {
 

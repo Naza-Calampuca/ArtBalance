@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton BotonPerfil;
 
+    TextView ArtBalance;
+
     private ImageView publi1;
     private DatabaseReference DaTabase;
     private ProgressDialog mProgressDialog;
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        ArtBalance = (TextView) findViewById(R.id.textView2);
 
         BotonPerfil = (ImageButton) findViewById(R.id.BotonPerfil);
 
@@ -77,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
         storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
         ArrayList<Publicacion> publicaciones = new ArrayList<>();
-        db.collection("Publicaciones")
 
+        db.collection("Publicaciones")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -108,6 +110,18 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         //Direccion de botones
+
+        ArtBalance.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent l = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(l);
+
+
+            }
+        });
 
         VentanaSubirArchivos.setOnClickListener(new View.OnClickListener() {
 

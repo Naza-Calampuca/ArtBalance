@@ -15,6 +15,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.artbalance.Publicacion;
@@ -43,8 +45,8 @@ public class SuirPublicacion extends AppCompatActivity {
     Button Atras;
     EditText NombreImg;
     EditText Precio;
-
-
+TextView ArtBalance;
+    ImageButton BotonPerfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +54,27 @@ public class SuirPublicacion extends AppCompatActivity {
         binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        ArtBalance = (TextView) findViewById(R.id.textView2);
         Atras = (Button) findViewById(R.id.Atras);
         NombreImg = (EditText) findViewById(R.id.NombreImg);
         Precio = (EditText) findViewById(R.id.Precio);
+        BotonPerfil = (ImageButton) findViewById(R.id.BotonPerfil);
+
+
+
+        BotonPerfil.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent a = new Intent(SuirPublicacion.this, PerfilUsuario.class);
+                startActivity(a);
+
+            }
+        });
+
+
 
         Atras.setOnClickListener(new View.OnClickListener() {
 
