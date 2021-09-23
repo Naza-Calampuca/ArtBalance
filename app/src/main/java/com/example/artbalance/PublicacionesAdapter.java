@@ -14,9 +14,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/*
- * Created by leandro and ArtBalance 27/8/21.
- */
+
 
 class PublicacionesAdapter  extends BaseAdapter {
 
