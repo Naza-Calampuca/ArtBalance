@@ -79,6 +79,7 @@ public class Login extends AppCompatActivity {
                             //
                             if(task.isSuccessful()){
                                 task.getResult();
+
                                 irahome();
 
                             }else {

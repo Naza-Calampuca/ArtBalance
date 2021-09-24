@@ -26,7 +26,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class PerfilUsuario extends AppCompatActivity {
 
@@ -61,11 +64,15 @@ public class PerfilUsuario extends AppCompatActivity {
         CerrarSesion = (Button) findViewById(R.id.BotonCerrarSesion);
 
 
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
+        Date now = new Date();
+        String fileName = formatter.format(now);
 
-        storageReference= FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
+        storageReference=FirebaseStorage.getInstance().getReference("images/"+fileName);
         ArrayList<Publicacion> publicaciones = new ArrayList<>();
         db.collection("Publicaciones")
 
+               // .whereEqualTo(,)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
 

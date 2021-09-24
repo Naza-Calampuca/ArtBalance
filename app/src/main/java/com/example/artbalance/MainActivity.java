@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -39,7 +40,10 @@ import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton BotonPerfil;
 
     TextView ArtBalance;
+
+    // TextView Usuario;
 
     private ImageView publi1;
     private DatabaseReference DaTabase;
@@ -77,7 +83,12 @@ public class MainActivity extends AppCompatActivity {
 
         CerrarSesion = (Button) findViewById(R.id.BotonCerrarSesion);
 
-        storageReference=FirebaseStorage.getInstance().getReference().child("Proyecto/arte1.jpg");
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
+        Date now = new Date();
+        String fileName = formatter.format(now);
+
+        storageReference=FirebaseStorage.getInstance().getReference("images/"+fileName);
         ArrayList<Publicacion> publicaciones = new ArrayList<>();
 
         db.collection("Publicaciones")
@@ -98,7 +109,9 @@ public class MainActivity extends AppCompatActivity {
                             ListView lista=findViewById (R.id.Listaimg);
                             PublicacionesAdapter ubis= new PublicacionesAdapter( MainActivity.this,publicaciones);
                             lista.setAdapter (ubis);
+
                         }
+
 
                         else {
 
@@ -110,6 +123,11 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         //Direccion de botones
+
+
+
+
+
 
         ArtBalance.setOnClickListener(new View.OnClickListener() {
 

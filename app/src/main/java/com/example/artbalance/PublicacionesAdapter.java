@@ -1,6 +1,7 @@
 package com.example.artbalance;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -63,6 +65,16 @@ class PublicacionesAdapter  extends BaseAdapter {
         Precio.setText(String.valueOf(p.getPrecio()));
         Descripcion.setText(p.getDescripcion());
         Usuario.setText(p.getUsuario());
+
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(v.getContext(), SuirPublicacion.class);
+                context.startActivity(intent);
+            }
+        });
 
         //Log.d("Imagen:", p.getImagen());
         return view;

@@ -48,6 +48,8 @@ public class SuirPublicacion extends AppCompatActivity {
 TextView ArtBalance;
     ImageButton BotonPerfil;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
