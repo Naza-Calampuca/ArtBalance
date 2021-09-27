@@ -18,9 +18,6 @@
         <activity android:name=".RecuperarPassword" />
         <activity android:name=".Registrarse" />
         <activity android:name=".Login" />
-        <activity
-            android:name=".InfoPublicacion"
-            android:exported="true" />
         <activity android:name=".CerrarSesion">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
