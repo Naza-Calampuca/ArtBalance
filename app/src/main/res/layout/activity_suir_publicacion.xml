@@ -3,6 +3,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:background="@drawable/gradient_background"
@@ -84,21 +85,44 @@
             android:id="@+id/NombreImg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:hint="Introducir Descripcion de la Publicacion"
+            android:layout_marginTop="28dp"
+            android:hint="Titulo"
             android:textColor="#FFFFFF"
             android:textColorHint="#838383"
-            app:layout_constraintTop_toBottomOf="@+id/selectImagebtn" />
+            app:layout_constraintTop_toBottomOf="@+id/selectImagebtn"
+            tools:layout_editor_absoluteX="0dp" />
 
         <EditText
             android:id="@+id/Precio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="Precio de la Publicación"
+            android:hint="Precio"
             android:textColor="#FFFFFF"
             android:textColorHint="#838383"
             app:layout_constraintTop_toBottomOf="@id/NombreImg" />
+
+        <EditText
+            android:id="@+id/descripcion_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="Descripcion"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#838383"
+            app:layout_constraintTop_toBottomOf="@id/Precio"
+            tools:layout_editor_absoluteX="-4dp" />
+
+        <EditText
+            android:id="@+id/tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="Tags"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#838383"
+            app:layout_constraintTop_toBottomOf="@id/descripcion_img"
+            tools:layout_editor_absoluteX="5dp" />
 
         <Button
             android:id="@+id/Atras"
@@ -110,7 +134,7 @@
             android:textStyle="bold"
             app:backgroundTint="#000000"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Precio" />
+            app:layout_constraintTop_toBottomOf="@+id/tags" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
