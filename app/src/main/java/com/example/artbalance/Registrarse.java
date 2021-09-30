@@ -25,24 +25,23 @@ public class Registrarse extends AppCompatActivity {
     AwesomeValidation awesomeValidation;
     FirebaseAuth firebaseAuth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
-
 
         firebaseAuth = FirebaseAuth.getInstance();
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         awesomeValidation.addValidation(this,R.id.et_mail, Patterns.EMAIL_ADDRESS,R.string.invalid_mail);
         awesomeValidation.addValidation(this,R.id.et_pass,".{6,}",R.string.invalid_password);
 
-
         et_mail = findViewById(R.id.et_mail);
         et_pass = findViewById(R.id.et_pass);
         btn_registrar = findViewById(R.id.btn_registrar);
 
         btn_registrar.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
@@ -50,28 +49,34 @@ public class Registrarse extends AppCompatActivity {
                 String pass = et_pass.getText().toString();
 
                 if(awesomeValidation.validate()){
+
                     firebaseAuth.createUserWithEmailAndPassword(mail,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+
                             if(task.isSuccessful()){
+
                                 Toast.makeText(Registrarse.this, "Usuario creado con exito", Toast.LENGTH_SHORT).show();
                                 finish();
-                            }else {
+                            }
+
+                            else {
+
                                 String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
                                 dameToastdeerror(errorCode);
                             }
                         }
                     });
-                }else {
-                    Toast.makeText(Registrarse.this, "Completa todos los datos!", Toast.LENGTH_SHORT).show();
                 }
 
+                else {
 
+                    Toast.makeText(Registrarse.this, "Completa todos los datos!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-
     }
-
 
     private void dameToastdeerror(String error) {
 
@@ -149,12 +154,6 @@ public class Registrarse extends AppCompatActivity {
                 et_pass.setError("La contraseña no es válida, debe tener al menos 6 caracteres");
                 et_pass.requestFocus();
                 break;
-
         }
-
     }
-
-
-
-
 }

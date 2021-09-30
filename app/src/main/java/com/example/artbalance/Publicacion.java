@@ -1,6 +1,7 @@
 package com.example.artbalance;
 
 public class Publicacion {
+
     String Descripcion;
     String Imagen;
     int Precio;
@@ -37,6 +38,4 @@ public class Publicacion {
     public void setUsuario(String usuario) {
         Usuario = usuario;
     }
-
-
 }

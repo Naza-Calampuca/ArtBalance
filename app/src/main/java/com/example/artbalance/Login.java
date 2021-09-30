@@ -30,6 +30,7 @@ public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -50,6 +51,7 @@ public class Login extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         if(user != null){
+
             irahome();
         }
 
@@ -58,16 +60,20 @@ public class Login extends AppCompatActivity {
         awesomeValidation.addValidation(this,R.id.et_pass,".{6,}",R.string.invalid_password);
 
         btn_registrar.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+
                 Intent i = new Intent(Login.this,Registrarse.class);
                 startActivity(i);
             }
         });
 
         btn_login.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+
                 if (awesomeValidation.validate()){
 
                     String mail = et_mail.getText().toString();
@@ -76,32 +82,32 @@ public class Login extends AppCompatActivity {
                     firebaseAuth.signInWithEmailAndPassword(mail,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            //
-                            if(task.isSuccessful()){
-                                task.getResult();
 
+                            if(task.isSuccessful()){
+
+                                task.getResult();
                                 irahome();
 
-                            }else {
+                            }
+
+                            else {
+
                                 String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
                                 dameToastdeerror(errorCode);
-
                             }
-                            //
                         }
                     });
                 }
-
             }
         });
 
         btn_recuperar.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
             }
         });
-
     }
 
     private void irahome() {
@@ -188,10 +194,6 @@ public class Login extends AppCompatActivity {
                 et_pass.setError("La contraseña no es válida, debe tener al menos 6 caracteres");
                 et_pass.requestFocus();
                 break;
-
         }
-
     }
-
-
 }

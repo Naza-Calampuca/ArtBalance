@@ -2,6 +2,7 @@ package com.example.artbalance;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ class PublicacionesAdapter  extends BaseAdapter {
     Context context;
 
     PublicacionesAdapter(Context context, ArrayList<Publicacion> publicacions) {
+
         this.publicacions = publicacions;
         this.context = context;
     }
@@ -44,15 +46,15 @@ class PublicacionesAdapter  extends BaseAdapter {
         return position;
     }
 
-
-
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
 
         if (view == null) {
+
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.list_publicaciones, viewGroup, false);
         }
+
         Publicacion p = publicacions.get(position);
 
         ImageView publicacionimagen= (ImageView) view.findViewById(R.id.publicacion);
@@ -60,18 +62,17 @@ class PublicacionesAdapter  extends BaseAdapter {
         TextView Descripcion= (TextView) view.findViewById(R.id.Descripcion);
         TextView Usuario= (TextView) view.findViewById(R.id.Usuario);
 
-
         Glide.with(context).load(p.getImagen()).into(publicacionimagen);
         Precio.setText(String.valueOf(p.getPrecio()));
         Descripcion.setText(p.getDescripcion());
         Usuario.setText(p.getUsuario());
-
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(v.getContext(), ComprarImagen.class);
+                Bundle paquetesdatos = new Bundle();
                 context.startActivity(intent);
             }
         });
