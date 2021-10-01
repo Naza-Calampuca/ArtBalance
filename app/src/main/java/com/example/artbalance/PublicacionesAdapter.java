@@ -75,7 +75,7 @@ class PublicacionesAdapter  extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), ComprarImagen.class);
+                Intent intent = new Intent(v.getContext(), InfoPublicacion.class);
                 context.startActivity(intent);
             }
         });
