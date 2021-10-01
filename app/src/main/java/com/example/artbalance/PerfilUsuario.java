@@ -40,7 +40,6 @@ public class PerfilUsuario extends AppCompatActivity {
     private com.google.firebase.database.FirebaseDatabase FirebaseDatabase;
     private StorageReference storageReference;
 
-
     Button VentanaSubirArchivos;
 
     Button CerrarSesion;
@@ -51,6 +50,7 @@ public class PerfilUsuario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_usuario);
@@ -63,7 +63,6 @@ public class PerfilUsuario extends AppCompatActivity {
 
         CerrarSesion = (Button) findViewById(R.id.BotonCerrarSesion);
 
-
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
         Date now = new Date();
         String fileName = formatter.format(now);
@@ -72,7 +71,6 @@ public class PerfilUsuario extends AppCompatActivity {
         ArrayList<Publicacion> publicaciones = new ArrayList<>();
         db.collection("Publicaciones")
 
-               // .whereEqualTo(,)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
 
@@ -86,8 +84,8 @@ public class PerfilUsuario extends AppCompatActivity {
                                 publicaciones.add(p);
 
                                 Log.d("TAG", document.getId() + " => " + document.getData());
-
                             }
+
                             ListView lista=findViewById (R.id.Listaimg);
                             PublicacionesAdapter ubis= new PublicacionesAdapter( PerfilUsuario.this,publicaciones);
                             lista.setAdapter (ubis);
@@ -96,9 +94,7 @@ public class PerfilUsuario extends AppCompatActivity {
                         else {
 
                             Log.w("TAG", "Error getting documents.", task.getException());
-
                         }
-
                     }
                 });
 
@@ -110,8 +106,6 @@ public class PerfilUsuario extends AppCompatActivity {
 
                 Intent l = new Intent(PerfilUsuario.this, MainActivity.class);
                 startActivity(l);
-
-
             }
         });
 
@@ -122,7 +116,6 @@ public class PerfilUsuario extends AppCompatActivity {
 
                 Intent i = new Intent(PerfilUsuario.this, SuirPublicacion.class);
                 startActivity(i);
-
             }
         });
 
@@ -134,7 +127,6 @@ public class PerfilUsuario extends AppCompatActivity {
 
                 Intent a = new Intent(PerfilUsuario.this, PerfilUsuario.class);
                 startActivity(a);
-
             }
         });
 
@@ -148,28 +140,14 @@ public class PerfilUsuario extends AppCompatActivity {
                 gologin();
                 Intent e = new Intent(PerfilUsuario.this, CerrarSesion.class);
                 startActivity(e);
-
             }
         });
-
-
     }
 
     private void gologin() {
+
         Intent i = new Intent(this, Login.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
-
-
-
-
-
-    }
-
-
-
-
-
-
-
+}

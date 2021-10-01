@@ -42,15 +42,13 @@ public class CerrarSesion extends AppCompatActivity {
     private FirebaseDatabase FirebaseDatabase;
     private StorageReference storageReference;
 
-
-
     Button IniciarSesion;
     Button Registrarse;
     TextView ArtBalance;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cerrar_sesion);
@@ -69,10 +67,8 @@ public class CerrarSesion extends AppCompatActivity {
 
                 Intent a = new Intent(CerrarSesion.this, CerrarSesion.class);
                 startActivity(a);
-
             }
         });
-
 
         IniciarSesion.setOnClickListener(new View.OnClickListener() {
 
@@ -81,7 +77,6 @@ public class CerrarSesion extends AppCompatActivity {
 
                 Intent i = new Intent(CerrarSesion.this, Login.class);
                 startActivity(i);
-
             }
         });
 
@@ -92,7 +87,6 @@ public class CerrarSesion extends AppCompatActivity {
 
                 Intent e = new Intent(CerrarSesion.this, Registrarse.class);
                 startActivity(e);
-
             }
         });
 
@@ -109,12 +103,13 @@ public class CerrarSesion extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             for (QueryDocumentSnapshot document : task.getResult()) {
+
                                 Publicacion p = document.toObject(Publicacion.class);
                                 publicaciones.add(p);
 
                                 Log.d("TAG", document.getId() + " => " + document.getData());
-
                             }
+
                             ListView lista=findViewById (R.id.Listaimg);
                             PublicacionesAdapter ubis= new PublicacionesAdapter( CerrarSesion.this,publicaciones);
                             lista.setAdapter (ubis);
@@ -123,19 +118,15 @@ public class CerrarSesion extends AppCompatActivity {
                         else {
 
                             Log.w("TAG", "Error getting documents.", task.getException());
-
                         }
-
                     }
                 });
-
-
     }
 
     private void gologin() {
+
         Intent i = new Intent(this, Login.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
-
 }

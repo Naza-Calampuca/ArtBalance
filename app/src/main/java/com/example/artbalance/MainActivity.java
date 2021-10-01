@@ -73,8 +73,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         ArtBalance = (TextView) findViewById(R.id.textView2);
 
         BotonPerfil = (ImageButton) findViewById(R.id.BotonPerfil);
@@ -82,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         VentanaSubirArchivos = (Button) findViewById(R.id.VentanaSubirArchivos);
 
         CerrarSesion = (Button) findViewById(R.id.BotonCerrarSesion);
-
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
         Date now = new Date();
@@ -92,42 +89,37 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Publicacion> publicaciones = new ArrayList<>();
 
         db.collection("Publicaciones")
+
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
                         if (task.isSuccessful()) {
 
                             for (QueryDocumentSnapshot document : task.getResult()) {
+
                                 Publicacion p = document.toObject(Publicacion.class);
                                 publicaciones.add(p);
 
                                 Log.d("TAG", document.getId() + " => " + document.getData());
-
                             }
+
                             ListView lista=findViewById (R.id.Listaimg);
                             PublicacionesAdapter ubis= new PublicacionesAdapter( MainActivity.this,publicaciones);
                             lista.setAdapter (ubis);
-
                         }
 
 
                         else {
 
                             Log.w("TAG", "Error getting documents.", task.getException());
-
                         }
-
                     }
                 });
 
         //Direccion de botones
-
-
-
-
-
 
         ArtBalance.setOnClickListener(new View.OnClickListener() {
 
@@ -136,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent l = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(l);
-
-
             }
         });
 
@@ -148,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent i = new Intent(MainActivity.this, SuirPublicacion.class);
                 startActivity(i);
-
             }
         });
 
@@ -159,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent a = new Intent(MainActivity.this, PerfilUsuario.class);
                 startActivity(a);
-
             }
         });
 
@@ -173,18 +161,14 @@ public class MainActivity extends AppCompatActivity {
                 gologin();
                 Intent e = new Intent(MainActivity.this, CerrarSesion.class);
                 startActivity(e);
-
             }
         });
-
-
     }
 
     private void gologin() {
+
         Intent i = new Intent(this, Login.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
-
-
 }

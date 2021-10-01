@@ -21,12 +21,13 @@ public class ComprarImagen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comprar_imagen);
 
         cardForm = findViewById(R.id.card_form);
         buy = findViewById(R.id.btnBuy);
-atras = findViewById(R.id.Atras);
+        atras = findViewById(R.id.Atras);
 
         cardForm.cardRequired(true)
                 .expirationRequired(true)
@@ -37,11 +38,10 @@ atras = findViewById(R.id.Atras);
                 .mobileNumberExplanation("SMS es requerido en este telefono")
                 .actionLabel("Comprar")
                 .setup(ComprarImagen.this);
-
         cardForm.getCvvEditText().setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
 
-
         buy.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
@@ -54,27 +54,33 @@ atras = findViewById(R.id.Atras);
                             "CVV: " + cardForm.getCvv() + "\n" +
                             "Codigo postal: " + cardForm.getPostalCode() + "\n" +
                             "Numero de telefono: " + cardForm.getMobileNumber());
+
                     alertBuilder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+
                             dialogInterface.dismiss();
                             Toast.makeText(ComprarImagen.this, "Gracias por su compra", Toast.LENGTH_LONG).show();
                         }
                     });
+
                     alertBuilder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.dismiss();
                         }
                     });
+
                     AlertDialog alertDialog = alertBuilder.create();
                     alertDialog.show();
-
-                }else {
-                    Toast.makeText(ComprarImagen.this, "Porfavor complete el formulario", Toast.LENGTH_LONG).show();
                 }
 
+                else {
 
+                    Toast.makeText(ComprarImagen.this, "Porfavor complete el formulario", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -85,19 +91,7 @@ atras = findViewById(R.id.Atras);
 
                 Intent l = new Intent(ComprarImagen.this, MainActivity.class);
                 startActivity(l);
-
-
             }
         });
-
-
-
-
     }
-
-
-
-
-
-
 }
