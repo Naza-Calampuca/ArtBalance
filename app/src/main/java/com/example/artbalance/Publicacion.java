@@ -5,6 +5,9 @@ public class Publicacion {
     String Imagen;
     int Precio;
     String Usuario;
+    String Informacion;
+    String Tags;
+
 
     public String getDescripcion() {
         return Descripcion;
@@ -37,6 +40,23 @@ public class Publicacion {
     public void setUsuario(String usuario) {
         Usuario = usuario;
     }
+
+    public String getInformacion() {
+        return Informacion;
+    }
+
+    public void setInformacion(String informacion) {
+        Informacion = informacion;
+    }
+
+    public String getTags() {
+        return Tags;
+    }
+
+    public void setTags(String tags) {
+        Tags = tags;
+    }
+
 
 
 }

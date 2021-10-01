@@ -59,13 +59,17 @@ class PublicacionesAdapter  extends BaseAdapter {
         TextView Precio= (TextView) view.findViewById(R.id.Precio);
         TextView Descripcion= (TextView) view.findViewById(R.id.Descripcion);
         TextView Usuario= (TextView) view.findViewById(R.id.Usuario);
+        TextView Informacion= (TextView) view.findViewById(R.id.Informacion);
+        TextView Tags= (TextView) view.findViewById(R.id.Tags);
+
 
 
         Glide.with(context).load(p.getImagen()).into(publicacionimagen);
         Precio.setText(String.valueOf(p.getPrecio()));
         Descripcion.setText(p.getDescripcion());
         Usuario.setText(p.getUsuario());
-
+        Informacion.setText(p.getInformacion());
+        Tags.setText(p.getTags());
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
