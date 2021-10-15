@@ -24,7 +24,6 @@ public class Login extends AppCompatActivity {
 
     Button btn_login,btn_registrar,btn_recuperar;
     EditText et_mail,et_pass;
-
     AwesomeValidation awesomeValidation;
     FirebaseAuth firebaseAuth;
 
@@ -87,6 +86,8 @@ public class Login extends AppCompatActivity {
 
                                 task.getResult();
                                 irahome();
+                                //breakpoint en task.getresult y Alt + f8 para ver el "ID USUARIO", despues ponerlo en una
+                                //variable nueva, para despues poder usarlo
 
                             }
 
