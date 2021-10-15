@@ -130,6 +130,9 @@ TextView ArtBalance;
         publicacion.put("Precio", Integer.valueOf(Precio.getText().toString()));
         publicacion.put("Informacion",   DescripcionImg.getText().toString());
         publicacion.put("Tags",   TagsImg.getText().toString());
+        //publicacion.put("iD_Usuario",   TagsImg.getText().toString());
+        //publicacion.put("Nombre_Usuario",   TagsImg.getText().toString());
+
 
 // Add a new document with a generated ID
         db.collection("Publicaciones")

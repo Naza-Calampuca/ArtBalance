@@ -16,7 +16,6 @@
         android:theme="@style/Theme.ArtBalance">
         <activity android:name=".InfoPublicacion"></activity>
         <activity android:name=".ComprarImagen" />
-        <activity android:name=".RecuperarPassword" />
         <activity android:name=".Registrarse" />
         <activity android:name=".Login" />
         <activity android:name=".CerrarSesion">

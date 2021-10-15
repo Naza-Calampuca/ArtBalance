@@ -41,7 +41,7 @@ public class Login extends AppCompatActivity {
         et_pass.setText("Globorojo722");
 
         btn_login = findViewById(R.id.btn_login);
-        btn_recuperar = findViewById(R.id.btn_recuperar);
+
         btn_registrar = findViewById(R.id.btn_registrar);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -101,13 +101,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        btn_recuperar.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
     }
 
     private void irahome() {
