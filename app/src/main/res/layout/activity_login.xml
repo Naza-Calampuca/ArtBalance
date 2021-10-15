@@ -9,9 +9,7 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".Login"
-    android:background="@drawable/gradient_background"
-
-    >
+    android:background="@drawable/gradient_background">
 
     <TextView
         android:layout_width="match_parent"
@@ -38,7 +36,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:endIconMode="password_toggle">
+        app:endIconMode="password_toggle"
+        android:translationY="10dp">
 
         <EditText
             android:id="@+id/et_pass"
@@ -57,7 +56,7 @@
         android:textColor="#000000"
         android:textSize="10dp"
         android:textStyle="bold"
-        android:translationY="20dp"
+        android:translationY="30dp"
         app:backgroundTint="#FFFFFF"
         app:strokeWidth="2dp"/>
 
@@ -66,12 +65,11 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:padding="10dp"
         android:text="Registrarse"
         android:textSize="10dp"
         android:textStyle="bold"
-        android:translationY="20dp"
-        app:backgroundTint="#9F9F9F" />
+        android:translationY="30dp"
+        app:backgroundTint="#9F9F9F"/>
 
     <Button
         android:id="@+id/btn_recuperar"
@@ -83,7 +81,7 @@
         android:textColor="#fff"
         android:textSize="10dp"
         android:textStyle="bold"
-        android:translationY="20dp"
-        app:backgroundTint="#000000" />
+        android:translationY="30dp"
+        app:backgroundTint="#000000"/>
 
 </LinearLayout>
