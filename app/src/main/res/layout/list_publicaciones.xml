@@ -8,65 +8,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/Usuario"
+        android:layout_width="205dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="90dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/publicacion"
         android:layout_width="350dp"
         android:layout_height="250dp"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
         android:onClick="EntrarPublicación6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Usuario"/>
 
     <TextView
         android:id="@+id/Precio"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
-        android:layout_marginLeft="103dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="103dp"
-        android:layout_marginRight="103dp"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Descripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/Descripcion"/>
 
     <TextView
         android:id="@+id/Descripcion"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
-        android:layout_marginLeft="103dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="103dp"
-        android:layout_marginRight="103dp"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/publicacion" />
-
-    <TextView
-        android:id="@+id/Usuario"
-        android:layout_width="205dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="103dp"
-        android:layout_marginLeft="103dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="103dp"
-        android:layout_marginRight="103dp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Precio" />
+        app:layout_constraintTop_toBottomOf="@+id/publicacion"/>
 
 
 
@@ -75,30 +69,27 @@
         android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
-        android:layout_marginLeft="103dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="103dp"
-        android:layout_marginRight="103dp"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/Precio"/>
 
     <TextView
         android:id="@+id/Tags"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
-        android:layout_marginLeft="103dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="103dp"
-        android:layout_marginRight="103dp"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Informacion" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

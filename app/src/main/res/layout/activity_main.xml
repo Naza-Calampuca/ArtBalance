@@ -30,8 +30,8 @@
         android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BotonPerfil"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BotonPerfil"/>
 
     <Button
         android:id="@+id/BotonCerrarSesion"
@@ -46,7 +46,7 @@
         app:backgroundTint="#000000"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/VentanaSubirArchivos"
@@ -62,7 +62,7 @@
         app:backgroundTint="#FFFFFF"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@id/BotonCerrarSesion" />
+        app:layout_constraintTop_toBottomOf="@id/BotonCerrarSesion"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextBuscar"
@@ -75,7 +75,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Buscar en ArtBalance" />
+            android:hint="Buscar en ArtBalance"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -87,7 +87,7 @@
         android:textSize="10dp"
         app:backgroundTint="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
 
     <Button
         android:id="@+id/ButFiltro2"
@@ -100,7 +100,7 @@
         android:textSize="10dp"
         app:backgroundTint="#000000"
         app:layout_constraintStart_toEndOf="@+id/ButFiltro1"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
 
     <Button
         android:id="@+id/ButFiltro3"
@@ -113,7 +113,7 @@
         android:textSize="10dp"
         app:backgroundTint="#000000"
         app:layout_constraintStart_toEndOf="@+id/ButFiltro2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
 
     <Button
         android:id="@+id/ButFiltro4"
@@ -126,7 +126,7 @@
         android:textSize="10dp"
         app:backgroundTint="#000000"
         app:layout_constraintStart_toEndOf="@+id/ButFiltro3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
 
     <ListView
         android:id="@+id/Listaimg"

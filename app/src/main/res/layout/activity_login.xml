@@ -48,19 +48,6 @@
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:endIconMode="clear_text">
-
-        <EditText
-            android:id="@+id/NombreUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Ingresar Nombre De Usuario"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-
     <Button
         android:id="@+id/btn_login"
         android:layout_width="150dp"
@@ -86,6 +73,17 @@
         android:translationY="20dp"
         app:backgroundTint="#9F9F9F" />
 
-
+    <Button
+        android:id="@+id/btn_recuperar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="Olvide mi contraseña"
+        android:textColor="#fff"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        android:translationY="20dp"
+        app:backgroundTint="#000000" />
 
 </LinearLayout>
