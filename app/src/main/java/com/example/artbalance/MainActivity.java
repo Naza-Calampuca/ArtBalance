@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText edtBuscar;
 
+    public static String emailUsuario;
+
     Button VentanaSubirArchivos;
 
     Button CerrarSesion;

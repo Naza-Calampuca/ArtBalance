@@ -20,10 +20,13 @@ import com.google.firebase.auth.FirebaseAuthException;
 
 public class Registrarse extends AppCompatActivity {
 
-    EditText et_mail,et_pass;
+    EditText et_mail,et_pass,nombreUsuario;
     Button btn_registrar;
     AwesomeValidation awesomeValidation;
     FirebaseAuth firebaseAuth;
+    String string_nombre_Usuario;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,9 @@ public class Registrarse extends AppCompatActivity {
 
         et_mail = findViewById(R.id.et_mail);
         et_pass = findViewById(R.id.et_pass);
+        nombreUsuario = findViewById(R.id.et_usuario);
+        string_nombre_Usuario = nombreUsuario.getText().toString();
+
         btn_registrar = findViewById(R.id.btn_registrar);
 
         btn_registrar.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +53,7 @@ public class Registrarse extends AppCompatActivity {
 
                 String mail = et_mail.getText().toString();
                 String pass = et_pass.getText().toString();
+                MainActivity.emailUsuario = mail;
 
                 if(awesomeValidation.validate()){
 

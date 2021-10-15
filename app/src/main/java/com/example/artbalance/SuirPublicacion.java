@@ -49,7 +49,7 @@ TextView ArtBalance;
     ImageButton BotonPerfil;
     EditText DescripcionImg;
     EditText TagsImg;
-
+    Uri imageUploaduri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +110,7 @@ TextView ArtBalance;
 
 
                 uploadImage();
-                subirFirestoreDatabase();
+
 
 
             }
@@ -126,12 +126,13 @@ TextView ArtBalance;
 // Create a new user with a first and last name
         Map<String, Object> publicacion = new HashMap<>();
         publicacion.put("Descripcion",   NombreImg.getText().toString());
-        publicacion.put("Imagen", imageUri.toString() );
+        publicacion.put("Imagen",imageUploaduri );
         publicacion.put("Precio", Integer.valueOf(Precio.getText().toString()));
         publicacion.put("Informacion",   DescripcionImg.getText().toString());
         publicacion.put("Tags",   TagsImg.getText().toString());
         //publicacion.put("iD_Usuario",   TagsImg.getText().toString());
-        //publicacion.put("Nombre_Usuario",   TagsImg.getText().toString());
+       publicacion.put("Nombre_Usuario", MainActivity.emailUsuario);
+        ;
 
 
 // Add a new document with a generated ID
@@ -172,12 +173,12 @@ TextView ArtBalance;
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
+                        imageUploaduri = taskSnapshot.getUploadSessionUri();
                         binding.fotoprueba.setImageURI(null);
                         Toast.makeText(SuirPublicacion.this,"Successfully Uploaded",Toast.LENGTH_SHORT).show();
                         if (progressDialog.isShowing())
                             progressDialog.dismiss();
-
+                        subirFirestoreDatabase();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
