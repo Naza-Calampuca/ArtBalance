@@ -49,7 +49,7 @@ TextView ArtBalance;
     ImageButton BotonPerfil;
     EditText DescripcionImg;
     EditText TagsImg;
-    Uri imageUploaduri;
+   // Uri imageUploaduri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,13 +120,13 @@ TextView ArtBalance;
 
     //firebase
 
-    private void subirFirestoreDatabase() {
+    private void subirFirestoreDatabase(Uri imageUploaduri) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 // Create a new user with a first and last name
         Map<String, Object> publicacion = new HashMap<>();
         publicacion.put("Descripcion",   NombreImg.getText().toString());
-        publicacion.put("Imagen",imageUploaduri );
+        publicacion.put("Imagen",imageUploaduri.toString() );
         publicacion.put("Precio", Integer.valueOf(Precio.getText().toString()));
         publicacion.put("Informacion",   DescripcionImg.getText().toString());
         publicacion.put("Tags",   TagsImg.getText().toString());
@@ -173,12 +173,23 @@ TextView ArtBalance;
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        imageUploaduri = taskSnapshot.getUploadSessionUri();
                         binding.fotoprueba.setImageURI(null);
                         Toast.makeText(SuirPublicacion.this,"Successfully Uploaded",Toast.LENGTH_SHORT).show();
                         if (progressDialog.isShowing())
                             progressDialog.dismiss();
-                        subirFirestoreDatabase();
+
+
+                        storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                subirFirestoreDatabase(uri);
+
+                            }
+                        });
+
+
+
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override

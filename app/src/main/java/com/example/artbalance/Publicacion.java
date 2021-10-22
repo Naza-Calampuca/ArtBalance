@@ -11,7 +11,7 @@ public class Publicacion {
 
     public String getDescripcion() {
         return Descripcion;
-    }
+    } //NOMBRE DE LA IMAGEN
 
     public void setDescripcion(String descripcion) {
         Descripcion = descripcion;
@@ -35,7 +35,7 @@ public class Publicacion {
 
     public String getUsuario() {
         return Usuario;
-    }
+    }  //MAIL DEL USUARIO
 
     public void setUsuario(String usuario) {
         Usuario = usuario;
@@ -43,7 +43,7 @@ public class Publicacion {
 
     public String getInformacion() {
         return Informacion;
-    }
+    } //DESCRIPCION DE LA IMAGEN
 
     public void setInformacion(String informacion) {
         Informacion = informacion;
