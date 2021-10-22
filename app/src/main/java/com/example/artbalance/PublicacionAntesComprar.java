@@ -40,8 +40,20 @@ public class PublicacionAntesComprar extends AppCompatActivity {
 
         CerrarSesion = (Button) findViewById(R.id.BotonCerrarSesion);
 
+        Comprar = (Button) findViewById(R.id.Comprar);
+
 
 //Direccion de botones
+
+        Comprar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent l = new Intent(PublicacionAntesComprar.this, ComprarImagen.class);
+                startActivity(l);
+            }
+        });
 
         ArtBalance.setOnClickListener(new View.OnClickListener() {
 
@@ -85,6 +97,8 @@ public class PublicacionAntesComprar extends AppCompatActivity {
                 startActivity(e);
             }
         });
+
+
 
     }
     private void gologin() {
