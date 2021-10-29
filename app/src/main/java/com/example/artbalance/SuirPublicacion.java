@@ -45,10 +45,11 @@ public class SuirPublicacion extends AppCompatActivity {
     Button Atras;
     EditText NombreImg;
     EditText Precio;
-TextView ArtBalance;
+    TextView ArtBalance;
     ImageButton BotonPerfil;
     EditText DescripcionImg;
     EditText TagsImg;
+    String mail;
    // Uri imageUploaduri;
 
     @Override
@@ -65,6 +66,13 @@ TextView ArtBalance;
         BotonPerfil = (ImageButton) findViewById(R.id.BotonPerfil);
         DescripcionImg = (EditText) findViewById(R.id.descripcion_img);
         TagsImg = (EditText) findViewById(R.id.tags);
+
+        mail = getIntent().getStringExtra("mail");
+
+
+        //La informacion parece estar bien en el login, el problema es que acá la recibe mal y lo deja en null a mail
+
+
 
 //direccion de botones
 
@@ -130,8 +138,8 @@ TextView ArtBalance;
         publicacion.put("Precio", Integer.valueOf(Precio.getText().toString()));
         publicacion.put("Informacion",   DescripcionImg.getText().toString());
         publicacion.put("Tags",   TagsImg.getText().toString());
+        publicacion.put("Usuario", mail);
         //publicacion.put("iD_Usuario",   TagsImg.getText().toString());
-       publicacion.put("Nombre_Usuario", MainActivity.emailUsuario);
         ;
 
 
