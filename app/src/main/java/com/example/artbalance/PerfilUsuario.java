@@ -71,7 +71,7 @@ public class PerfilUsuario extends AppCompatActivity {
         ArrayList<Publicacion> publicaciones = new ArrayList<>();
         db.collection("Publicaciones")
 
-                .whereEqualTo("Usuario", true)
+                .whereEqualTo("Usuario", MainActivity.idUsuario)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
 

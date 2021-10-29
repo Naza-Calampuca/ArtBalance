@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
+
     Button btn_login,btn_registrar,btn_recuperar;
     EditText et_mail,et_pass;
     AwesomeValidation awesomeValidation;
@@ -85,6 +86,8 @@ public class Login extends AppCompatActivity {
                             if(task.isSuccessful()){
 
                                 task.getResult();
+                                FirebaseUser currentUser   = firebaseAuth.getCurrentUser();
+                                MainActivity.idUsuario = currentUser.getUid();
                                 irahome();
                                 //breakpoint en task.getresult y Alt + f8 para ver el "ID USUARIO", despues ponerlo en una
                                 //variable nueva, para despues poder usarlo
@@ -108,7 +111,9 @@ public class Login extends AppCompatActivity {
     private void irahome() {
 
         Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("mail", et_mail.getText().toString());
+
+        // i.putExtra("id_usuario", et_mail.getText().toString());  HABRIA QUE PONER EL RESULTADO DEL TASK.GETRESULT
+        MainActivity.emailUsuario =  et_mail.getText().toString();
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }

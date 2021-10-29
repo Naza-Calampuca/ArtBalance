@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static String emailUsuario;
 
+    public static String idUsuario;
+
     Button VentanaSubirArchivos;
 
     Button CerrarSesion;

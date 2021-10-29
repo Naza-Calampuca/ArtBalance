@@ -69,7 +69,6 @@ public class SuirPublicacion extends AppCompatActivity {
 
         mail = getIntent().getStringExtra("mail");
 
-
         //La informacion parece estar bien en el login, el problema es que acá la recibe mal y lo deja en null a mail
 
 
@@ -138,7 +137,7 @@ public class SuirPublicacion extends AppCompatActivity {
         publicacion.put("Precio", Integer.valueOf(Precio.getText().toString()));
         publicacion.put("Informacion",   DescripcionImg.getText().toString());
         publicacion.put("Tags",   TagsImg.getText().toString());
-        publicacion.put("Usuario", mail);
+        publicacion.put("Usuario", MainActivity.emailUsuario);
         //publicacion.put("iD_Usuario",   TagsImg.getText().toString());
         ;
 

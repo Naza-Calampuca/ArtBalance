@@ -76,6 +76,10 @@ class PublicacionesAdapter  extends BaseAdapter {
             public void onClick(View v) {
 
                 Intent intent = new Intent(v.getContext(), PublicacionAntesComprar.class);
+                intent.putExtra("precio", Precio.getText().toString());
+                intent.putExtra("Descripcion", Precio.getText().toString());
+
+
                 context.startActivity(intent);
             }
         });
