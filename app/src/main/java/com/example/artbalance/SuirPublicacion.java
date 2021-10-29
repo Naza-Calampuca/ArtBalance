@@ -138,7 +138,7 @@ public class SuirPublicacion extends AppCompatActivity {
         publicacion.put("Informacion",   DescripcionImg.getText().toString());
         publicacion.put("Tags",   TagsImg.getText().toString());
         publicacion.put("Usuario", MainActivity.emailUsuario);
-        publicacion.put("iD_Usuario", MainActivity.idUsuario);
+        publicacion.put("Id_Usuario", MainActivity.idUsuario);
         ;
 
 
