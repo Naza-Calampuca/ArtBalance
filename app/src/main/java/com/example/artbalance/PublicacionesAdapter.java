@@ -80,6 +80,7 @@ class PublicacionesAdapter  extends BaseAdapter {
                 intent.putExtra("informacion",Informacion.getText().toString());
                 intent.putExtra("precio", Precio.getText().toString());
                 intent.putExtra("Descripcion", Descripcion.getText().toString());
+                intent.putExtra("tags", Tags.getText().toString());
 
 
                 context.startActivity(intent);

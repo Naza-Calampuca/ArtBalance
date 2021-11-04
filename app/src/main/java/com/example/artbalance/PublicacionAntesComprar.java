@@ -26,6 +26,7 @@ public class PublicacionAntesComprar extends AppCompatActivity {
     ImageButton BotonPerfil;
     TextView Descripcion2;
     TextView ArtBalance;
+    TextView Tags2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +36,14 @@ public class PublicacionAntesComprar extends AppCompatActivity {
         String precioo = data.getString("precio");
         String descripcion=data.getString("Descripcion");
         String titulo=data.getString("informacion");
+        String Tags21=data.getString("tags");
+
+
+
         Descripcion2=(TextView) findViewById(R.id.TextInfo1);
         Descripcion2.setText(descripcion);
+        Tags2=(TextView)findViewById(R.id.TextInfo4);
+        Tags2.setText(Tags21);
         tituloo=(TextView)findViewById(R.id.TextInfo3);
         tituloo.setText(titulo);
         ArtBalance = (TextView) findViewById(R.id.TextInfo2);
