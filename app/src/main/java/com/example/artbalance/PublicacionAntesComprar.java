@@ -22,17 +22,25 @@ public class PublicacionAntesComprar extends AppCompatActivity {
     Button VentanaSubirArchivos;
 
     Button CerrarSesion;
-
+  TextView tituloo;
     ImageButton BotonPerfil;
-
+    TextView Descripcion2;
     TextView ArtBalance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publicacion_antes_comprar);
-
-        ArtBalance = (TextView) findViewById(R.id.textView2);
+        Bundle data = this.getIntent().getExtras();
+        String precioo = data.getString("precio");
+        String descripcion=data.getString("Descripcion");
+        String titulo=data.getString("informacion");
+        Descripcion2=(TextView) findViewById(R.id.TextInfo1);
+        Descripcion2.setText(descripcion);
+        tituloo=(TextView)findViewById(R.id.TextInfo3);
+        tituloo.setText(titulo);
+        ArtBalance = (TextView) findViewById(R.id.TextInfo2);
+        ArtBalance.setText(precioo);
 
         BotonPerfil = (ImageButton) findViewById(R.id.BotonPerfil);
 

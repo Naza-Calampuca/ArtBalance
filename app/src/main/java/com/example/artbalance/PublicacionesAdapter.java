@@ -56,6 +56,7 @@ class PublicacionesAdapter  extends BaseAdapter {
         Publicacion p = publicacions.get(position);
 
         ImageView publicacionimagen= (ImageView) view.findViewById(R.id.publicacion);
+        TextView titulo=(TextView) view.findViewById(R.id.TextInfo1);
         TextView Precio= (TextView) view.findViewById(R.id.Precio);
         TextView Descripcion= (TextView) view.findViewById(R.id.Descripcion);
         TextView Usuario= (TextView) view.findViewById(R.id.Usuario);
@@ -76,8 +77,9 @@ class PublicacionesAdapter  extends BaseAdapter {
             public void onClick(View v) {
 
                 Intent intent = new Intent(v.getContext(), PublicacionAntesComprar.class);
+                intent.putExtra("informacion",Informacion.getText().toString());
                 intent.putExtra("precio", Precio.getText().toString());
-                intent.putExtra("Descripcion", Precio.getText().toString());
+                intent.putExtra("Descripcion", Descripcion.getText().toString());
 
 
                 context.startActivity(intent);
