@@ -69,75 +69,11 @@
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/IniciarSesion"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextBuscar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:endIconMode="clear_text"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:layout_marginTop="40dp">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Buscar en ArtBalance" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/ButFiltro1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="Filtros"
-        android:text="Usuarios"
-        android:textSize="10dp"
-        app:backgroundTint="#000000"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
-
-    <Button
-        android:id="@+id/ButFiltro2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:onClick="Filtros"
-        android:text="Región"
-        android:textSize="10dp"
-        app:backgroundTint="#000000"
-        app:layout_constraintStart_toEndOf="@+id/ButFiltro1"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
-
-    <Button
-        android:id="@+id/ButFiltro3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:onClick="Filtros"
-        android:text="Tendencias"
-        android:textSize="10dp"
-        app:backgroundTint="#000000"
-        app:layout_constraintStart_toEndOf="@+id/ButFiltro2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
-
-    <Button
-        android:id="@+id/ButFiltro4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:onClick="Filtros"
-        android:text="Tipos de Artes"
-        android:textSize="10dp"
-        app:backgroundTint="#000000"
-        app:layout_constraintStart_toEndOf="@+id/ButFiltro3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuscar"/>
-
     <ListView
         android:id="@+id/Listaimg"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="215dp"
+        android:layout_marginTop="110dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ButFiltro3"
         tools:ignore="MissingConstraints"/>

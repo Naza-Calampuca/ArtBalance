@@ -58,7 +58,6 @@ public class SuirPublicacion extends AppCompatActivity {
         binding = ActivitySuirPublicacionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         ArtBalance = (TextView) findViewById(R.id.textView2);
         Atras = (Button) findViewById(R.id.Atras);
         NombreImg = (EditText) findViewById(R.id.NombreImg);
@@ -66,14 +65,10 @@ public class SuirPublicacion extends AppCompatActivity {
         BotonPerfil = (ImageButton) findViewById(R.id.BotonPerfil);
         DescripcionImg = (EditText) findViewById(R.id.descripcion_img);
         TagsImg = (EditText) findViewById(R.id.tags);
-
         mail = getIntent().getStringExtra("mail");
 
         //La informacion parece estar bien en el login, el problema es que acá la recibe mal y lo deja en null a mail
-
-
-
-//direccion de botones
+        // direccion de botones
 
         BotonPerfil.setOnClickListener(new View.OnClickListener() {
 
@@ -104,9 +99,7 @@ public class SuirPublicacion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 selectImage();
-
 
             }
         });
