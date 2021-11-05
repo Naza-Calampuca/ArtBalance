@@ -11,6 +11,8 @@ import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.braintreepayments.cardform.view.CardForm;
@@ -29,12 +31,16 @@ public class ComprarImagen extends AppCompatActivity {
     Button atras;
     String usuario;
     String Id_Publicacion;
+    TextView ArtBalance;
+    ImageButton BotonPerfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comprar_imagen);
+        ArtBalance = (TextView) findViewById(R.id.textView2);
+        BotonPerfil = (ImageButton) findViewById(R.id.BotonPerfil);
 
         cardForm = findViewById(R.id.card_form);
         buy = findViewById(R.id.btnBuy);
@@ -50,10 +56,6 @@ public class ComprarImagen extends AppCompatActivity {
                 .actionLabel("Comprar")
                 .setup(ComprarImagen.this);
         cardForm.getCvvEditText().setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
-
-
-
-
 
         buy.setOnClickListener(new View.OnClickListener() {
 
@@ -111,6 +113,26 @@ public class ComprarImagen extends AppCompatActivity {
 
                 Intent l = new Intent(ComprarImagen.this, MainActivity.class);
                 startActivity(l);
+            }
+        });
+
+        ArtBalance.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent l = new Intent(ComprarImagen.this, MainActivity.class);
+                startActivity(l);
+            }
+        });
+
+        BotonPerfil.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent a = new Intent(ComprarImagen.this, PerfilUsuario.class);
+                startActivity(a);
             }
         });
     }
