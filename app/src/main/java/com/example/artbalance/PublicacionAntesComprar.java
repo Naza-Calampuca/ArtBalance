@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.StorageReference;
 
@@ -27,6 +29,7 @@ public class PublicacionAntesComprar extends AppCompatActivity {
     TextView Descripcion2;
     TextView ArtBalance;
     TextView Tags2;
+    ImageView Publicacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +40,10 @@ public class PublicacionAntesComprar extends AppCompatActivity {
         String descripcion=data.getString("Descripcion");
         String titulo=data.getString("informacion");
         String Tags21=data.getString("tags");
+  String Imagen=data.getString("imagen");
 
-
-
+        Publicacion=(ImageView)findViewById(R.id.ImagenPubli);
+        Glide.with(this).load(Imagen).into(Publicacion);
         Descripcion2=(TextView) findViewById(R.id.TextInfo1);
         Descripcion2.setText(descripcion);
         Tags2=(TextView)findViewById(R.id.TextInfo4);
