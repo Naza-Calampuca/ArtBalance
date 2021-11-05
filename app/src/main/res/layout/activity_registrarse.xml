@@ -46,20 +46,6 @@
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:endIconMode="clear_text"
-        android:translationY="20dp">
-
-        <EditText
-            android:id="@+id/et_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Nombre de Usuario"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <Button
         android:id="@+id/btn_registrar"
         android:layout_width="150dp"

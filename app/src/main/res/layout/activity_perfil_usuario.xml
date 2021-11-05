@@ -22,7 +22,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="110dp"
         android:layout_marginRight="132dp"
         android:text="ArtBalance"
@@ -31,7 +31,7 @@
         android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toEndOf="@+id/BotonPerfil"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/BotonCerrarSesion"

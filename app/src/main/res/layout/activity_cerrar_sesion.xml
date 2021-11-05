@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,64 +10,46 @@
 
     <ImageButton
         android:id="@+id/BotonPerfil"
-        android:layout_width="106dp"
-        android:layout_height="106dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:onClick="EntrarPerfil"
         android:scaleType="centerCrop"
-        android:src="@drawable/logo"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:src="@drawable/logo"/>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="132dp"
         android:text="ArtBalance"
         android:textColor="@color/white"
-        android:textSize="30dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BotonPerfil"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:textSize="20dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="30dp"/>
 
     <Button
         android:id="@+id/IniciarSesion"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginRight="3dp"
+        android:layout_height="35dp"
         android:onClick="IniciarSesion"
         android:text="Iniciar Sesión"
         android:textColor="#000000"
         android:textSize="10dp"
         android:textStyle="bold"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeWidth="2dp"/>
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="5dp"/>
 
     <Button
         android:id="@+id/btn_registrarse"
-        android:layout_width="116dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="5dp"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
         android:onClick="SubirArchivo"
         android:text="Registrarse"
         android:textSize="10dp"
         android:textStyle="bold"
         app:backgroundTint="#9F9F9F"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/IniciarSesion"/>
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="45dp"/>
 
     <ListView
         android:id="@+id/Listaimg"
@@ -78,4 +60,4 @@
         app:layout_constraintTop_toBottomOf="@+id/ButFiltro3"
         tools:ignore="MissingConstraints"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

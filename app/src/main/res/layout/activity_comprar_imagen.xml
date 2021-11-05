@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".ComprarImagen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComprarImagen">
 
-    >
     <ImageButton
         android:id="@+id/BotonPerfil"
-        android:layout_width="106dp"
-        android:layout_height="106dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/perfil"
-/>
-
+        android:src="@drawable/perfil"/>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="32dp"
         android:text="ArtBalance"
         android:textColor="@color/black"
-        android:textSize="30dp"
-
-
-        />
+        android:textSize="20dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="30dp"/>
 
     <com.braintreepayments.cardform.view.CardForm
         android:id="@+id/card_form"
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="160dp"
-        />
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"/>
 
     <Button
         android:id="@+id/btnBuy"
@@ -42,25 +39,21 @@ tools:context=".ComprarImagen"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="50dp"
         android:background="@color/white"
         android:backgroundTint="#FFFFFF"
         android:text="comprar"
-        android:textColor="@android:color/white" />
-
+        android:textColor="@android:color/white"/>
 
     <Button
         android:id="@+id/Atras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="310dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="3dp"
         android:backgroundTint="#000000"
         android:text="Atras"
         android:textSize="10dp"
-    />
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="5dp"/>
 
 </RelativeLayout>

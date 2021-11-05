@@ -70,6 +70,16 @@ public class SuirPublicacion extends AppCompatActivity {
         //La informacion parece estar bien en el login, el problema es que acá la recibe mal y lo deja en null a mail
         // direccion de botones
 
+        ArtBalance.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent l = new Intent(SuirPublicacion.this, MainActivity.class);
+                startActivity(l);
+            }
+        });
+
         BotonPerfil.setOnClickListener(new View.OnClickListener() {
 
             @Override

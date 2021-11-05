@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,138 +10,107 @@
 
     <ImageButton
         android:id="@+id/BotonPerfil"
-        android:layout_width="106dp"
-        android:layout_height="106dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/perfil"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:src="@drawable/perfil"/>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="132dp"
         android:text="ArtBalance"
         android:textColor="@color/white"
-        android:textSize="30dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BotonPerfil"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:textSize="20dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="30dp"/>
 
     <Button
         android:id="@+id/BotonCerrarSesion"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
+        android:layout_height="35dp"
         android:text="Cerrar Sesión"
         android:textSize="10dp"
         app:backgroundTint="#000000"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="5dp"/>
 
     <Button
         android:id="@+id/VentanaSubirArchivos"
-        android:layout_width="116dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
         android:text="Subir Archivo"
         android:textColor="#000000"
         android:textSize="10dp"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/BotonCerrarSesion"/>
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="45dp"/>
 
     <ImageView
         android:id="@+id/ImagenPubli"
         android:layout_width="match_parent"
         android:layout_height="234dp"
-        android:layout_marginTop="35dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2" />
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="35dp"/>
 
     <TextView
         android:id="@+id/TextInfo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="25dp"
         android:hint="Titulo"
         android:textColor="@color/white"
         android:textColorHint="#838383"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImagenPubli" />
+        android:layout_below="@id/ImagenPubli"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="5dp"/>
 
     <TextView
         android:id="@+id/TextInfo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="25dp"
         android:hint="Precio"
         android:textColorHint="#838383"
         android:textColor="@color/white"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextInfo1" />
+        android:layout_below="@+id/TextInfo1"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"/>
 
     <TextView
         android:id="@+id/TextInfo3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="25dp"
         android:hint="Descripcion"
         android:textColorHint="#838383"
         android:textColor="@color/white"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextInfo2" />
+        android:layout_below="@+id/TextInfo2"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"/>
 
     <TextView
         android:id="@+id/TextInfo4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="25dp"
         android:hint="Tags"
         android:textColorHint="#838383"
         android:textColor="@color/white"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextInfo3" />
+        android:layout_below="@+id/TextInfo3"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"/>
 
     <Button
         android:id="@+id/Comprar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="100dp"
         android:text="Comprar la publicacion"
         android:textColor="#000000"
         android:textSize="10dp"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextInfo4"/>
+        android:layout_below="@+id/TextInfo4"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="90dp"/>
 
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
