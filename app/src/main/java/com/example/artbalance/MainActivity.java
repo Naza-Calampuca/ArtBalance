@@ -47,8 +47,6 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edtBuscar;
-
     public static String emailUsuario;
 
     public static String idUsuario;

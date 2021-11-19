@@ -143,8 +143,8 @@ public class ComprarImagen extends AppCompatActivity {
 
 // Create a new user with a first and last name
         Map<String, Object> compra = new HashMap<>();
-        compra.put("Publicacion", Id_Publicacion);
-        compra.put("Usuario", usuario);
+        compra.put("Publicacion", SuirPublicacion.id_publicacion);
+        compra.put("Usuario", MainActivity.idUsuario);
 
 // Add a new document with a generated ID
         db.collection("Compras")

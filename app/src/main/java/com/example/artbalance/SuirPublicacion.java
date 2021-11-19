@@ -38,6 +38,7 @@ import java.util.Map;
 
 public class SuirPublicacion extends AppCompatActivity {
 
+    public static String id_publicacion;
     ActivitySuirPublicacionBinding binding;
     Uri imageUri;
     StorageReference storageReference;
@@ -152,6 +153,8 @@ public class SuirPublicacion extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d("naza", "DocumentSnapshot added with ID: " + documentReference.getId());
+                        id_publicacion = documentReference.getId();
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
