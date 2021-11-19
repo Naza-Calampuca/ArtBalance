@@ -73,17 +73,6 @@
         android:translationY="20dp"
         app:backgroundTint="#9F9F9F" />
 
-    <Button
-        android:id="@+id/btn_recuperar"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:text="Olvide mi contraseña"
-        android:textColor="#fff"
-        android:textSize="10dp"
-        android:textStyle="bold"
-        android:translationY="20dp"
-        app:backgroundTint="#000000" />
+
 
 </LinearLayout>

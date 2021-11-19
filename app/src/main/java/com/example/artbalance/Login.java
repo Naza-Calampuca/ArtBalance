@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity {
 
 
-    Button btn_login,btn_registrar,btn_recuperar;
+    Button btn_login,btn_registrar;
     EditText et_mail,et_pass;
     AwesomeValidation awesomeValidation;
     FirebaseAuth firebaseAuth;
