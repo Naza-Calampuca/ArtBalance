@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,6 +45,7 @@ public class CerrarSesion extends AppCompatActivity {
 
     Button IniciarSesion;
     Button Registrarse;
+    ImageButton Logo;
     TextView ArtBalance;
 
     @Override
@@ -53,12 +55,25 @@ public class CerrarSesion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cerrar_sesion);
 
+        Logo = (ImageButton) findViewById(R.id.BotonPerfil);
+
         ArtBalance = (TextView) findViewById(R.id.textView2);
 
         Registrarse = (Button) findViewById(R.id.btn_registrarse);
 
         IniciarSesion = (Button) findViewById(R.id.IniciarSesion);
 
+
+
+        Logo.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent a = new Intent(CerrarSesion.this, CerrarSesion.class);
+                startActivity(a);
+            }
+        });
 
         ArtBalance.setOnClickListener(new View.OnClickListener() {
 
